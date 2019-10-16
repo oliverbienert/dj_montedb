@@ -59,6 +59,5 @@ Desktop.ini
 ./site/
 /dj_montedb.iml
 /src/media/
-/src/static/
 /.idea/
 /logs/
