@@ -58,6 +58,6 @@ Desktop.ini
 # Project settings
 ./site/
 /dj_montedb.iml
-/src/media/
 /.idea/
 /logs/
+/media/
