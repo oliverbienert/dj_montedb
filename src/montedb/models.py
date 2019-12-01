@@ -1,6 +1,7 @@
 import datetime
 
 from django.db import models
+from django.urls import reverse
 
 
 class Person(models.Model):
@@ -20,6 +21,9 @@ class Child(Person):
     birth_place = models.CharField(max_length=255)
     care_time = models.DurationField(default=datetime.timedelta(hours=1))
     kita = models.BooleanField()
+
+    def get_absolute_url(self):
+        return reverse('child-update', kwargs={'pk': self.pk})
 
     def __str__(self):
         return "Child (" \
