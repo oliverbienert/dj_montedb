@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block container %}
+
+    <div class="child_list">
+    <h2>Children</h2>
+    <ul>
+        {% for child in child_list %}
+            <li>{{ child.first_name }} {{ child.last_name }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+
+{% endblock %}
