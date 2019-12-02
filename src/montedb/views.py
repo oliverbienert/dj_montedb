@@ -12,20 +12,20 @@ child_fields = ["first_name", "last_name",
 
 
 class ChildrenView(ListView):
-    template_name = "child_list.html"
+    template_name = "montedb/child_list.html"
     model = Child
 
 
 class ChildCreate(CreateView):
     model = Child
     form_class = ChildForm
-    template_name = "child_form.html"
+    template_name = "montedb/child_form.html"
 
 
 class ChildUpdate(UpdateView):
     model = Child
     form_class = ChildForm
-    template_name = "child_form.html"
+    template_name = "montedb/child_form.html"
 
 
 class ChildDelete(DeleteView):

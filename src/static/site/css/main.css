@@ -177,3 +177,20 @@ body>.navbar-transparent {
 .form-box form .form-control:focus {
   z-index: 2;
 }
+
+.selectdatewidget {
+    display: inline-block;
+}
+
+select[name$="_day"].selectdatewidget {
+    width: 27%;
+    color: red;
+}
+select[name$="_month"].selectdatewidget {
+    width: 38%;
+    color: green;
+}
+select[name$="_year"].selectdatewidget {
+    width: 35%;
+    color: blue;
+}
