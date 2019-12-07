@@ -2,15 +2,31 @@
 
 {% load staticfiles %}
 
-{% block container %}
+{% block title %}{{ block.super }}Liste der Kinder{% endblock %}
 
-    <div class="child_list">
-    <h2>Children</h2>
-    <ul>
+{% block table %}
+
+    <div>
+        <table>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Birth date</th>
+            <th>Birth place</th>
+            <th>Care time</th>
+            <th>Kita</th>
+        </tr>
         {% for child in child_list %}
-            <li>{{ child.first_name }} {{ child.last_name }}</li>
+        <tr>
+            <td>{{ child.first_name }}</td>>
+            <td>{{ child.last_name }}</td>>
+            <td>{{ child.birth_date }}</td>>
+            <td>{{ child.birth_place }}</td>>
+            <td>{{ child.care_time }}</td>>
+            <td>{{ child.kita }}</td>>
+        </tr>
         {% endfor %}
-    </ul>
+        </table>
     </div>
 
-{% endblock %}
+{% endblock table %}
