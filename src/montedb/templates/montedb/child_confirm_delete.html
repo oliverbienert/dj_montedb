@@ -1,0 +1,12 @@
+{% extends "montedb/person_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Kind löschen{% endblock %}
+
+{% block form_heading %}Kind löschen{% endblock %}
+
+{% block form %}
+    {% crispy form %}
+
+{% endblock form %}

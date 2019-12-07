@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 from .models import Child
-from .forms import ChildForm
+from .forms import ChildForm, ChildDeleteForm
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
@@ -30,4 +30,5 @@ class ChildUpdate(UpdateView):
 
 class ChildDelete(DeleteView):
     model = Child
+    form_class = ChildDeleteForm
     success_url = reverse_lazy('child-list')

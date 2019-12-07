@@ -6,6 +6,8 @@ from django.forms import ModelForm, SelectDateWidget
 
 from .models import Child
 
+submit_css_class = "btn btn-lg btn-primary btn-block"
+
 
 class ChildForm(ModelForm):
 
@@ -22,7 +24,23 @@ class ChildForm(ModelForm):
             Field("birth_place", placeholder="Geburtsort"),
             Field("care_time", placeholder="Betreuungszeit"),
             Field("kita", placeholder="Kita"),
-            Submit("add", "Hinzufügen", css_class="btn btn-lg btn-primary btn-block"),
+            Submit("add", "Hinzufügen", css_class=submit_css_class),
+        )
+
+    class Meta:
+        model = Child
+        fields = "__all__"
+
+
+class ChildDeleteForm(ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super.__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Field("first_name", readonly=True),
+            Field("last_name", readonly=True),
+            Submit("delete", "Löschen", css_class=submit_css_class)
         )
 
     class Meta:
