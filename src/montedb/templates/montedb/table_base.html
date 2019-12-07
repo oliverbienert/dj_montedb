@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block container %}
+<div class="container table">
+    <div class="text-left">
+        <h2>{% block table_heading %}{% endblock %}</h2>
+          {% block table %}
+          {% endblock %}
+    </div>
+</div>
+{% endblock %}
