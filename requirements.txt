@@ -4,26 +4,25 @@
 #
 #    pip-compile
 #
---index-url https://pypi.python.org/simple
-
 argon2-cffi==19.1.0
-cffi==1.13.0              # via argon2-cffi
+cffi==1.13.2              # via argon2-cffi
 click==7.0                # via pip-tools
 django-authtools==1.7.0
 django-braces==1.13.0
 django-crispy-forms==1.7.2
 django-debug-toolbar==2.0
 django-environ==0.4.5
+django-tables2==2.2.1
 django==2.0.13
 easy-thumbnails==2.6
-pillow==6.2.0             # via easy-thumbnails
+pillow==6.2.1             # via easy-thumbnails
 pip-tools==4.2.0
 pipdeptree==0.13.2
-psycopg2==2.8.3
+psycopg2==2.8.4
 pycparser==2.19           # via cffi
-pytz==2018.7              # via django
-six==1.12.0               # via argon2-cffi, pip-tools
-sqlparse==0.2.4           # via django-debug-toolbar
+pytz==2019.3              # via django
+six==1.13.0               # via argon2-cffi, pip-tools
+sqlparse==0.3.0           # via django-debug-toolbar
 werkzeug==0.16
 wheel==0.33.6
 

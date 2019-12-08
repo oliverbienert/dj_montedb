@@ -30,6 +30,7 @@ TEMPLATES = [
                 # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
                 # list if you haven't customized them:
                 "django.contrib.auth.context_processors.auth",
+                "django.template.context_processors.request",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.i18n",
                 "django.template.context_processors.media",
@@ -72,6 +73,7 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "authtools",
     "crispy_forms",
+    "django_tables2",
     "easy_thumbnails",
     "profiles",
     "accounts",
