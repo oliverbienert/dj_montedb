@@ -135,3 +135,6 @@ LOGIN_REDIRECT_URL = reverse_lazy("profiles:show_self")
 LOGIN_URL = reverse_lazy("accounts:login")
 
 THUMBNAIL_EXTENSION = "png"  # Or any extn for your thumbnails
+
+# Django Tables2
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
