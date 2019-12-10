@@ -122,7 +122,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 # Crispy Form Theme - Bootstrap 3
-CRISPY_TEMPLATE_PACK = "bootstrap3"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # For Bootstrap 3, change error alert to 'danger'
 from django.contrib import messages
