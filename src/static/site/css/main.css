@@ -180,6 +180,7 @@ body>.navbar-transparent {
 
 .selectdatewidget {
     display: inline-block;
+    min-height: 46px;
 }
 
 select[name$="_day"].selectdatewidget {
