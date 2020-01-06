@@ -31,18 +31,3 @@ class ChildForm(ModelForm):
         model = Child
         fields = "__all__"
 
-
-class ChildDeleteForm(ModelForm):
-
-    def __init__(self, *args, **kwargs):
-        super.__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            Field("first_name", readonly=True),
-            Field("last_name", readonly=True),
-            Submit("delete", "Löschen", css_class=submit_css_class)
-        )
-
-    class Meta:
-        model = Child
-        fields = "__all__"
