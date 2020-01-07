@@ -7,6 +7,12 @@
 {% block form_heading %}Kind löschen{% endblock %}
 
 {% block form %}
-    {% crispy form %}
-
+    <form method="post">
+        {% csrf_token %}
+        <p class="text-danger">Are you sure you want to delete "{{ object.first_name }} {{ object.last_name }}"?</p>
+        <input class="btn btn-primary" type="submit" value="Confirm"/>
+        <a href="{{ view.success_url }}" class="btn btn-secondary">Cancel</a>
+    </form>
 {% endblock form %}
+
+

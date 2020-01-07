@@ -19,7 +19,7 @@ class Person(models.Model):
 
 class Child(Person):
     birth_place = models.CharField(max_length=255)
-    care_time = models.DurationField(default=datetime.timedelta(hours=1))
+    care_time = models.IntegerField(null=False, default=4)
     kita = models.BooleanField()
 
     def get_absolute_url(self):

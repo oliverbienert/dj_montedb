@@ -1,10 +1,9 @@
-from django.views.generic import ListView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django_tables2 import SingleTableView
 from .models import Child
-from .forms import ChildForm, ChildDeleteForm
+from .forms import ChildForm
 from .tables import ChildTable
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 child_fields = ["first_name", "last_name",
                 "birth_date",
@@ -22,6 +21,7 @@ class ChildrenView(SingleTableView):
 class ChildCreate(CreateView):
     model = Child
     form_class = ChildForm
+    title = "Kind hinzufügen"
     template_name = "montedb/child_form.html"
     success_url = reverse_lazy('child-list')
 
@@ -29,12 +29,12 @@ class ChildCreate(CreateView):
 class ChildUpdate(UpdateView):
     model = Child
     form_class = ChildForm
+    title = "Kind bearbeiten"
     template_name = "montedb/child_form.html"
     success_url = reverse_lazy('child-list')
 
 
 class ChildDelete(DeleteView):
     model = Child
-    form_class = ChildDeleteForm
-    template_name = "montedb/child_confirm_delete.html"
     success_url = reverse_lazy('child-list')
+
