@@ -2,9 +2,9 @@
 
 {% load crispy_forms_tags %}
 
-{% block title %}{{ block.super }}Kind hinzufügen{% endblock %}
+{% block title %}{{ block.super }}{{ view.title }}{% endblock %}
 
-{% block form_heading %}Kind hinzufügen{% endblock %}
+{% block form_heading %}{{ view.title }}{% endblock %}
 
 {% block form %}
     {% crispy form %}

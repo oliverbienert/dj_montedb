@@ -21,15 +21,20 @@ class ChildrenView(SingleTableView):
 class ChildCreate(CreateView):
     model = Child
     form_class = ChildForm
+    title = "Kind hinzufügen"
     template_name = "montedb/child_form.html"
+    success_url = reverse_lazy('child-list')
 
 
 class ChildUpdate(UpdateView):
     model = Child
     form_class = ChildForm
+    title = "Kind bearbeiten"
     template_name = "montedb/child_form.html"
+    success_url = reverse_lazy('child-list')
 
 
 class ChildDelete(DeleteView):
     model = Child
     success_url = reverse_lazy('child-list')
+
