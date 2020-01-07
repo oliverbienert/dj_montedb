@@ -20,6 +20,7 @@ class ChildForm(ModelForm):
 
         self.helper.layout = Layout(
             Fieldset(
+                'Persönliche Angaben',
                 Field("first_name", placeholder="Vorname", autofocus=""),
                 Field("last_name", placeholder="Nachname"),
                 MultiWidgetField('birth_date', placeholder='Geburtsdatum', css_class='selectdatewidget', attrs=({'style': 'display: inline-block;'})),
