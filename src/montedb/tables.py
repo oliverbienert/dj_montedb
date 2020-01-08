@@ -1,6 +1,6 @@
 from django_tables2 import tables, TemplateColumn
 
-from .models import Child
+from .models import Adult, Child
 
 
 class ChildTable(tables.Table):
@@ -10,3 +10,10 @@ class ChildTable(tables.Table):
 
     buttons = TemplateColumn(template_name="montedb/child_table_buttons.html", orderable=False, verbose_name="")
 
+
+class AdultTable(tables.Table):
+    class Meta:
+        model = Adult
+        fields = {"first_name", "last_name", "birth_date", "iban", "partner_to"}
+
+    buttons = TemplateColumn(template_name="montedb/adult_table_buttons.html", orderable=False, verbose_name="")
