@@ -40,3 +40,21 @@ class Child(Person):
             self.care_time,
             self.kita)
 
+
+class Adult(Person):
+    iban = models.CharField(max_length=32)
+    partner_to = models.ForeignKey("self", on_delete=models.SET_NULL, blank=True, null=True)
+
+    def get_absolute_url(self):
+        return reverse('adult-update', kwargs={'pk': self.pk})
+
+    def __str__(self):
+        return "Adult(" \
+               "First name: {}, " \
+               "Last name: {}, " \
+               "Birth date: {}, " \
+               "IBAN: {}".format(
+            self.first_name,
+            self.last_name,
+            self.birth_date,
+            self.iban)
