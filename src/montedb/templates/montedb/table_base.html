@@ -8,10 +8,8 @@
 <div class="container mt-2">
 
     <div class="text-left">
-        <h2>{% block table_heading %}Kinder bearbeiten{% endblock %}</h2>
-        <p>
-            <a class="btn btn-info btn-sm" href="{% url 'child-add' %}">Kind hinzufügen</a>
-        </p>
+          {% block editing %}
+          {% endblock %}
           {% block table %}
           {% endblock %}
     </div>
