@@ -8,4 +8,5 @@ class ChildTable(tables.Table):
         model = Child
         fields = ("first_name", "last_name", "birth_date", "birth_place", "care_time", "kita")
 
-    buttons = TemplateColumn(template_name="montedb/table_buttons.html", orderable=False, verbose_name="")
+    buttons = TemplateColumn(template_name="montedb/child_table_buttons.html", orderable=False, verbose_name="")
+
