@@ -14,6 +14,6 @@ class ChildTable(tables.Table):
 class AdultTable(tables.Table):
     class Meta:
         model = Adult
-        fields = {"first_name", "last_name", "birth_date", "iban", "partner_to"}
+        fields = {"first_name", "last_name", "birth_date", "iban", "partner"}
 
     buttons = TemplateColumn(template_name="montedb/adult_table_buttons.html", orderable=False, verbose_name="")
