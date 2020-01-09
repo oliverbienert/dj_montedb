@@ -43,7 +43,7 @@ class Child(Person):
 
 class Adult(Person):
     iban = models.CharField(max_length=32)
-    partner_to = models.ForeignKey("self", on_delete=models.SET_NULL, blank=True, null=True)
+    partner = models.OneToOneField("self", on_delete=models.SET_NULL, blank=True, null=True)
 
     def get_absolute_url(self):
         return reverse('adult-update', kwargs={'pk': self.pk})
