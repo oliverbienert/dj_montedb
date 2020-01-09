@@ -3,6 +3,7 @@ import datetime
 from crispy_forms.bootstrap import FormActions
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field, Submit, MultiWidgetField, Button, Fieldset, ButtonHolder, HTML
+from django.db.models import Q
 from django.forms import ModelForm, SelectDateWidget, ModelChoiceField
 
 from .models import Adult, Child
@@ -56,13 +57,14 @@ class AdultForm(PersonForm):
                 Field("last_name", placeholder="Nachname"),
                 MultiWidgetField('birth_date', placeholder='Geburtsdatum', css_class='selectdatewidget', attrs=({'style': 'display: inline-block;'})),
                 Field("iban", placeholder="IBAN"),
-                Field("partner_to", )
+                Field("partner")
             ),
             FormActions(
                 Submit("add", "{{ view.title }}"),
                 HTML('<a href="{{ view.success_url }}" class="btn btn-secondary">Cancel</a>')
             )
         )
+        self.fields['partner'].queryset = Adult.objects.filter((Q(partner__isnull=True) | Q(partner=self.instance)))
 
     class Meta:
         model = Adult
