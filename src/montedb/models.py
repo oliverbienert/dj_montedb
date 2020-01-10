@@ -45,6 +45,12 @@ class Adult(Person):
     iban = models.CharField(max_length=32)
     partner = models.OneToOneField("self", on_delete=models.SET_NULL, blank=True, null=True)
 
+    def save(self, recursive=True, *args, **kwargs):
+        super(Person, self).save()
+        if self.partner is not None and recursive:
+            self.partner.partner = self
+            self.partner.save(recursive=False)
+
     def get_absolute_url(self):
         return reverse('adult-update', kwargs={'pk': self.pk})
 
