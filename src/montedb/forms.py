@@ -64,7 +64,9 @@ class AdultForm(PersonForm):
                 HTML('<a href="{{ view.success_url }}" class="btn btn-secondary">Cancel</a>')
             )
         )
-        self.fields['partner'].queryset = Adult.objects.filter((Q(partner__isnull=True) | Q(partner=self.instance)))
+        self.fields['partner'].queryset = Adult.objects\
+            .filter(Q(partner=None) | Q(partner=self.instance))\
+            .exclude(pk=self.instance.pk)
 
     class Meta:
         model = Adult
