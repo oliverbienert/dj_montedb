@@ -47,9 +47,12 @@ class Adult(Person):
 
     def save(self, recursive=True, *args, **kwargs):
         super(Person, self).save()
-        if self.partner is not None and recursive:
+        if self.partner is None:
+            Adult.objects.all().filter(partner=self).update(partner=None)
+        else:
             self.partner.partner = self
-            self.partner.save(recursive=False)
+            if recursive:
+                self.partner.save(recursive=False)
 
     def get_absolute_url(self):
         return reverse('adult-update', kwargs={'pk': self.pk})
