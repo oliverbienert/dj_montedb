@@ -14,6 +14,7 @@ class ChildTable(tables.Table):
 class AdultTable(tables.Table):
     class Meta:
         model = Adult
-        fields = {"first_name", "last_name", "birth_date", "iban", "partner"}
+        fields = {'first_name', 'last_name', 'birth_date', 'iban', 'partner'}
+        sequence = ('first_name', 'last_name', 'birth_date', 'iban', '...')
 
     buttons = TemplateColumn(template_name="montedb/adult_table_buttons.html", orderable=False, verbose_name="")
