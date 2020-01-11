@@ -58,12 +58,4 @@ class Adult(Person):
         return reverse('adult-update', kwargs={'pk': self.pk})
 
     def __str__(self):
-        return "Adult(" \
-               "First name: {}, " \
-               "Last name: {}, " \
-               "Birth date: {}, " \
-               "IBAN: {}".format(
-            self.first_name,
-            self.last_name,
-            self.birth_date,
-            self.iban)
+        return "{} {}".format(self.first_name, self.last_name)
