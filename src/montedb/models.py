@@ -26,19 +26,7 @@ class Child(Person):
         return reverse('child-update', kwargs={'pk': self.pk})
 
     def __str__(self):
-        return "Child (" \
-               "First name: {}, " \
-               "Last name: {}, " \
-               "Birth date: {}, " \
-               "Birth place: {}, " \
-               "Care time:  {}, " \
-               "Kita: {}".format(
-            self.first_name,
-            self.last_name,
-            self.birth_date,
-            self.birth_place,
-            self.care_time,
-            self.kita)
+        return "{} {}".format(self.first_name, self.last_name)
 
 
 class Adult(Person):
