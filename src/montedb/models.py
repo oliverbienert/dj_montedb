@@ -47,3 +47,14 @@ class Adult(Person):
 
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
+
+
+class AdultsChildren(models.Model):
+    adult = models.ForeignKey(Adult, on_delete=models.CASCADE)
+    child = models.ForeignKey(Child, on_delete=models.CASCADE)
+
+    PARENT = "PR"
+    KINSHIP = [
+        (PARENT, 'Parent')
+    ]
+    kinship = models.CharField(max_length=2, choices=KINSHIP, default=PARENT)
