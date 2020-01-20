@@ -48,8 +48,7 @@
             {% endblock %}
         </a>
         <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                {% block navbar-left %}{% endblock %}
+            <ul class="navbar-nav ml-auto">
                 {% block navbar-right %}
                     {% if user.is_authenticated %}
                         {% if user.is_staff %}

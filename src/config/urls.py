@@ -13,7 +13,6 @@ admin.site.site_header = "Dj_Montedb Administration"
 
 urlpatterns = [
     path("", views.HomePage.as_view(), name="home"),
-    path("about/", views.AboutPage.as_view(), name="about"),
     path("users/", include(profiles.urls)),
     path("montedb/", include(montedb.urls)),
     path("admin/", admin.site.urls),
