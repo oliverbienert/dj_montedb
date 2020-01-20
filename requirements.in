@@ -1,5 +1,5 @@
 argon2-cffi==19.1.0
-django==2.0.13
+django==2.2.9
 django-authtools==1.7.0
 django-braces==1.13.0
 django-crispy-forms==1.7.2
