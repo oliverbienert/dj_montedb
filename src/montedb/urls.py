@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import AdultsView, AdultCreate, AdultUpdate, AdultDelete, ChildrenView, ChildCreate, ChildUpdate, ChildDelete
 
+app_name = 'montedb'
+
 urlpatterns = [
     path('children/', ChildrenView.as_view(), name='child-list'),
     path('child/add/', ChildCreate.as_view(), name='child-add'),

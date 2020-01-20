@@ -23,7 +23,7 @@ class Child(Person):
     kita = models.BooleanField()
 
     def get_absolute_url(self):
-        return reverse('child-update', kwargs={'pk': self.pk})
+        return reverse('montedb:child-update', kwargs={'pk': self.pk})
 
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
@@ -43,7 +43,7 @@ class Adult(Person):
                 self.partner.save(recursive=False)
 
     def get_absolute_url(self):
-        return reverse('adult-update', kwargs={'pk': self.pk})
+        return reverse('montedb:adult-update', kwargs={'pk': self.pk})
 
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)

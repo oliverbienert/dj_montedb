@@ -75,7 +75,6 @@ INSTALLED_APPS = (
     "crispy_forms",
     "django_tables2",
     "easy_thumbnails",
-    "profiles",
     "accounts",
     "montedb",
 )
@@ -131,7 +130,7 @@ MESSAGE_TAGS = {messages.ERROR: "danger"}
 
 # Authentication Settings
 AUTH_USER_MODEL = "authtools.User"
-LOGIN_REDIRECT_URL = reverse_lazy("profiles:show_self")
+LOGIN_REDIRECT_URL = reverse_lazy("montedb:child-list")
 LOGIN_URL = reverse_lazy("accounts:login")
 
 THUMBNAIL_EXTENSION = "png"  # Or any extn for your thumbnails

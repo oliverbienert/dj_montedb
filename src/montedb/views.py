@@ -28,7 +28,7 @@ class ChildCreate(CreateView):
     form_class = ChildForm
     title = "Kind hinzufügen"
     template_name = "montedb/child_form.html"
-    success_url = reverse_lazy('child-list')
+    success_url = reverse_lazy('montedb:child-list')
 
 
 class ChildUpdate(UpdateView):
@@ -36,12 +36,12 @@ class ChildUpdate(UpdateView):
     form_class = ChildForm
     title = "Kind bearbeiten"
     template_name = "montedb/child_form.html"
-    success_url = reverse_lazy('child-list')
+    success_url = reverse_lazy('montedb:child-list')
 
 
 class ChildDelete(DeleteView):
     model = Child
-    success_url = reverse_lazy('child-list')
+    success_url = reverse_lazy('montedb:child-list')
 
 
 class AdultsView(SingleTableView):
@@ -55,7 +55,7 @@ class AdultCreate(CreateView):
     form_class = AdultForm
     title = "Erwachsenen hinzufügen"
     template_name = "montedb/adult_form.html"
-    success_url = reverse_lazy('adult-list')
+    success_url = reverse_lazy('montedb:adult-list')
 
 
 class AdultUpdate(UpdateView):
@@ -63,9 +63,9 @@ class AdultUpdate(UpdateView):
     form_class = AdultForm
     title = "Erwachsenen bearbeiten"
     template_name = "montedb/adult_form.html"
-    success_url = reverse_lazy('adult-list')
+    success_url = reverse_lazy('montedb:adult-list')
 
 
 class AdultDelete(DeleteView):
     model = Adult
-    success_url = reverse_lazy('adult-list')
+    success_url = reverse_lazy('montedb:adult-list')

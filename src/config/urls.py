@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, path
-import profiles.urls
 import accounts.urls
 import montedb.urls
 from . import views
@@ -13,7 +12,6 @@ admin.site.site_header = "Dj_Montedb Administration"
 
 urlpatterns = [
     path("", views.HomePage.as_view(), name="home"),
-    path("users/", include(profiles.urls)),
     path("montedb/", include(montedb.urls)),
     path("admin/", admin.site.urls),
     path("", include(accounts.urls)),

@@ -15,12 +15,11 @@
 
 {% block splash %}
     <div class="jumbotron jumbotron-carousel corporate-jumbo">
-        <div class="container">navbar-left
+        <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <h1>{% include "_brandname.html" %}</h1>
                     <p>Beiträge, Bescheide, Behörden und Co. </p>
-{#                    <a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up for Free!</a>#}
                 </div>
                 <div class="col-md-4 col-sm-4">
 
@@ -40,12 +39,12 @@
             <div class="col-lg-4">
                 <h2>Children</h2>
                 <p>Show and edit children. </p>
-                <p><a class="btn btn-primary" href="{% url 'child-list' %}" role="button">Show Children</a></p>
+                <p><a class="btn btn-primary" href="{% url 'montedb:child-list' %}" role="button">Show Children</a></p>
             </div>
             <div class="col-lg-4">
                 <h2>Adults</h2>
                 <p>Show and edit adults. </p>
-                <p><a class="btn btn-primary" href="{% url 'adult-list' %}" role="button">Show Adults</a></p>
+                <p><a class="btn btn-primary" href="{% url 'montedb:adult-list' %}" role="button">Show Adults</a></p>
             </div>
             <div class="col-lg-4">
                 <h2>Heading</h2>
