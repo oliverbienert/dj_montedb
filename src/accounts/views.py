@@ -31,26 +31,6 @@ class LogoutView(authviews.LogoutView):
     url = reverse_lazy("home")
 
 
-class SignUpView(
-    bracesviews.AnonymousRequiredMixin,
-    bracesviews.FormValidMessageMixin,
-    generic.CreateView,
-):
-    form_class = forms.SignupForm
-    model = User
-    template_name = "accounts/signup.html"
-    success_url = reverse_lazy("home")
-    form_valid_message = "You're signed up!"
-
-    def form_valid(self, form):
-        r = super().form_valid(form)
-        username = form.cleaned_data["email"]
-        password = form.cleaned_data["password1"]
-        user = auth.authenticate(email=username, password=password)
-        auth.login(self.request, user)
-        return r
-
-
 class PasswordChangeView(authviews.PasswordChangeView):
     form_class = forms.PasswordChangeForm
     template_name = "accounts/password-change.html"
