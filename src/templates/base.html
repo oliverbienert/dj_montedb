@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="{% block description %}{% endblock description %}">
     <meta name="author" content="Oliver Bienert">
     <link rel="shortcut icon" href="{% static 'site/ico/favicon.ico' %}">
@@ -15,6 +15,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Bootstrap table CSS -->
+    <link href="{% static 'bootstrap/css/bootstrap-table.min.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this site -->
     {% block styles %}
@@ -133,6 +135,8 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap-table.min.js' %}"></script>
+<script src="https://kit.fontawesome.com/c94b753db0.js" crossorigin="anonymous"></script>
 {% block scripts %}
 {% endblock scripts %}
 </body>
