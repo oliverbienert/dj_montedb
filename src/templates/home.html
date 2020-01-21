@@ -14,12 +14,14 @@
 {% endblock %}
 
 {% block splash %}
+    {% if not user.is_authenticated %}
     <div class="jumbotron jumbotron-carousel corporate-jumbo">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <h1>{% include "_brandname.html" %}</h1>
                     <p>Beiträge, Bescheide, Behörden und Co. </p>
+                    <p style="font-size: xx-small">Bild von <a href="https://pixabay.com/de/users/creativesignature-1460253/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1633406">Chris Stermitz</a> auf <a href="https://pixabay.com/de/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1633406">Pixabay</a></p>
                 </div>
                 <div class="col-md-4 col-sm-4">
 
@@ -27,6 +29,7 @@
             </div>
         </div>
     </div>
+    {% endif %}
 {% endblock splash %}
 
 {% block container %}
