@@ -22,11 +22,17 @@ class ChildrenView(SingleTableView):
     table_class = ChildTable
     model = Child
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ChildrenView, self).get_context_data(**kwargs)
+        context['children'] = 'active'
+        return context
+
 
 class ChildCreate(CreateView):
     model = Child
     form_class = ChildForm
-    title = "Kind hinzufügen"
+    title = "Add child"
     template_name = "montedb/child_form.html"
     success_url = reverse_lazy('montedb:child-list')
 
@@ -34,7 +40,7 @@ class ChildCreate(CreateView):
 class ChildUpdate(UpdateView):
     model = Child
     form_class = ChildForm
-    title = "Kind bearbeiten"
+    title = "Edit child"
     template_name = "montedb/child_form.html"
     success_url = reverse_lazy('montedb:child-list')
 
@@ -49,11 +55,17 @@ class AdultsView(SingleTableView):
     table_class = AdultTable
     model = Adult
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(AdultsView, self).get_context_data(**kwargs)
+        context['adults'] = 'active'
+        return context
+
 
 class AdultCreate(CreateView):
     model = Adult
     form_class = AdultForm
-    title = "Erwachsenen hinzufügen"
+    title = "Add adult"
     template_name = "montedb/adult_form.html"
     success_url = reverse_lazy('montedb:adult-list')
 
@@ -61,7 +73,7 @@ class AdultCreate(CreateView):
 class AdultUpdate(UpdateView):
     model = Adult
     form_class = AdultForm
-    title = "Erwachsenen bearbeiten"
+    title = "Edit adult"
     template_name = "montedb/adult_form.html"
     success_url = reverse_lazy('montedb:adult-list')
 

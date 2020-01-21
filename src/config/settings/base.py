@@ -130,7 +130,7 @@ MESSAGE_TAGS = {messages.ERROR: "danger"}
 
 # Authentication Settings
 AUTH_USER_MODEL = "authtools.User"
-LOGIN_REDIRECT_URL = reverse_lazy("montedb:child-list")
+LOGIN_REDIRECT_URL = reverse_lazy("home")
 LOGIN_URL = reverse_lazy("accounts:login")
 
 THUMBNAIL_EXTENSION = "png"  # Or any extn for your thumbnails

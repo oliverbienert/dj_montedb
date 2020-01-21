@@ -4,12 +4,12 @@
 
 {% load render_table from django_tables2 %}
 
-{% block title %}{{ block.super }}Liste der Kinder{% endblock %}
+{% block title %}{{ block.super }}Children{% endblock %}
 
 {% block editing %}
-<h2>{% block table_heading %}Kinder bearbeiten{% endblock %}</h2>
+<h2>{% block table_heading %}Edit children{% endblock %}</h2>
 <p>
-    <a class="btn btn-info btn-sm" href="{% url 'montedb:child-add' %}">Kind hinzufügen</a>
+    <a class="btn btn-info btn-sm" href="{% url 'montedb:child-add' %}">Add child</a>
 </p>
 {% endblock %}
 

@@ -26,13 +26,13 @@ class ChildForm(PersonForm):
 
         self.helper.layout = Layout(
             Fieldset(
-                'Persönliche Angaben',
-                Field("first_name", placeholder="Vorname", autofocus=""),
-                Field("last_name", placeholder="Nachname"),
-                MultiWidgetField('birth_date', placeholder='Geburtsdatum', css_class='selectdatewidget', attrs=({'style': 'display: inline-block;'})),
-                Field("birth_place", placeholder="Geburtsort"),
-                Field("care_time", placeholder="Betreuungszeit"),
-                Field("kita", placeholder="Kita")
+                'Personal data',
+                Field("first_name", placeholder="First name", autofocus=""),
+                Field("last_name", placeholder="Last name"),
+                MultiWidgetField('birth_date', placeholder='Birth date', css_class='selectdatewidget', attrs=({'style': 'display: inline-block;'})),
+                Field("birth_place", placeholder="Birth place"),
+                Field("care_time", placeholder="Care time"),
+                Field("kita", placeholder="Nursery")
             ),
             FormActions(
                 Submit("add", "{{ view.title }}"),
@@ -52,10 +52,10 @@ class AdultForm(PersonForm):
 
         self.helper.layout = Layout(
             Fieldset(
-                'Persönliche Angaben',
-                Field("first_name", placeholder="Vorname", autofocus=""),
-                Field("last_name", placeholder="Nachname"),
-                MultiWidgetField('birth_date', placeholder='Geburtsdatum', css_class='selectdatewidget', attrs=({'style': 'display: inline-block;'})),
+                'Personal data',
+                Field("first_name", placeholder="First name", autofocus=""),
+                Field("last_name", placeholder="Last name"),
+                MultiWidgetField('birth_date', placeholder='Birth date', css_class='selectdatewidget', attrs=({'style': 'display: inline-block;'})),
                 Field("iban", placeholder="IBAN"),
                 Field("partner")
             ),

@@ -1,11 +1,10 @@
-{% extends "base.html" %}
+{% extends "home.html" %}
 
 {% block navbar %}
     {{ block.super }}
 {% endblock %}
 
-{% block container %}
-<div class="container mt-2">
+{% block main %}
 
     <div class="text-left">
           {% block editing %}
@@ -13,5 +12,5 @@
           {% block table %}
           {% endblock %}
     </div>
-</div>
-{% endblock %}
+
+{% endblock main %}

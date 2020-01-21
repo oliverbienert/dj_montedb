@@ -36,8 +36,8 @@
 <body>
 
 {% block navbar %}
-    <div class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
-        <a class="navbar-brand mb-0 h1" href="{% url 'home' %}">
+    <div class="navbar navbar-expand-md navbar-dark sticky-top bg-dark" role="navigation">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{% url 'home' %}">
             {% block navbar-brand %}
                 <img
                         src="{% static 'site/img/leuchtturm_logo.png' %}"
@@ -51,42 +51,30 @@
         </a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                {% block navbar-right %}
-                    {% if user.is_authenticated %}
-                        {% if user.is_staff %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
-                            </li>
-                        {% endif %}
-                        <li class="nav-item dropdown">
-                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button">
-                                <img src="{% thumbnail user.profile.picture|default:'default_profile.png' 30x30 crop %}"
-                                     alt=""/>
-                                {{ user.get_full_name|truncatechars:20 }}
-                                <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu" role="menu">
-                                <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a>
-                            </div>
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
                         </li>
                     {% endif %}
-                {% endblock %}
+                    <li class="nav-item dropdown ">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button">
+                            {{ user.get_full_name|truncatechars:20 }}
+                            <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+                            <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a>
+                            <a class="dropdown-item" href="{% url 'accounts:password-change' %}">Password Change</a>
+                        </div>
+                    </li>
+                {% else %}
+                    <a class="btn btn-primary" href="{% url 'accounts:login' %}" role="button">Log in</a>
+                {% endif %}
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 {% endblock navbar %}
-
-{% block messages %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">  <!-- singular -->
-                <a class="close" data-dismiss="alert">×</a>
-                {{ message|safe }}
-            </div>
-        {% endfor %}
-    {% endif %}
-{% endblock %}
 
 {% block splash %}
 {% endblock splash %}
@@ -94,27 +82,6 @@
 {% block container %}
 {% endblock container %}
 
-<!-- Site footer -->
-{% block footer %}
-    <!-- Some social button for contact will do -->
-    <a id="contact"></a>
-    <div class="container">
-        <div class="footer">
-            <div class="row">
-                <div class="col-lg-6">
-                    <p>&copy; Freie Montessorischule e.V. {% now 'Y' %}</p>
-                </div>
-                {% comment %}
-                <div class="col-lg-6 text-right">
-                    Connect with us on
-                    <a href="#"><i class="fa fa-facebook"></i> Facebook</a> or
-                    <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                </div>
-{% endcomment %}
-            </div>
-        </div>
-    </div>
-{% endblock %}
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -127,6 +94,7 @@
         crossorigin="anonymous"></script>
 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'bootstrap/js/bootstrap-table.min.js' %}"></script>
+<script src="{% static 'bootstrap/extensions/bootstrap-table-mobile.min.js' %}"></script>
 <script src="https://kit.fontawesome.com/c94b753db0.js" crossorigin="anonymous"></script>
 {% block scripts %}
 {% endblock scripts %}
