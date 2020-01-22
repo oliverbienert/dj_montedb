@@ -30,7 +30,8 @@ html, body{
 
 .sidebar-sticky {
     position: -webkit-sticky;
-    position: sticky;
+    position: absolute;
+    width: 100%;
     top: 70px; /* Height of navbar */
     height: calc(100vh - 70px);
     padding-top: 1rem;
