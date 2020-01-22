@@ -64,3 +64,8 @@ Desktop.ini
 
 # Virtual environment
 /venv/
+.vscode/launch.json
+.vscode/settings.json
+
+# Git stuff
+*.patch
