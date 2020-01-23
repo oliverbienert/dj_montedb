@@ -1,7 +1,18 @@
 from django.contrib import admin
 
-from .models import Adult, Child
+from .models import Adult, Child, Income
 
-admin.site.register(Adult)
-admin.site.register(Child)
 
+class IncomeInline(admin.TabularInline):
+    model = Income
+
+
+@admin.register(Adult)
+class AdultAdmin(admin.ModelAdmin):
+
+    inlines = [IncomeInline]
+
+
+@admin.register(Child)
+class ChildAdmin(admin.ModelAdmin):
+    pass

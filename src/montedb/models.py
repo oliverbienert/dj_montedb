@@ -58,3 +58,29 @@ class AdultsChildren(models.Model):
         (PARENT, 'Parent')
     ]
     kinship = models.CharField(max_length=2, choices=KINSHIP, default=PARENT)
+
+
+class Income(models.Model):
+    SALARY = 'salary'
+    INCOME = 'income'
+    UNEMPLOYMENT = 'unemployment'
+    MAINTENANCE = 'maintenance'
+    DEDUCTION = 'deduction'
+    INCOME_TYPE = [
+        (SALARY, 'Salary'),
+        (INCOME, 'Income'),
+        (UNEMPLOYMENT, 'Unemployment'),
+        (MAINTENANCE, 'Maintenance'),
+        (DEDUCTION, 'Deduction')
+    ]
+    amount = models.IntegerField()
+    type = models.CharField(
+        max_length=20,
+        choices=INCOME_TYPE,
+        default=SALARY
+    )
+    adult = models.ForeignKey(Adult, models.CASCADE)
+
+    def __str__(self):
+        return "{}: {}".format(self.type, self.amount)
+
