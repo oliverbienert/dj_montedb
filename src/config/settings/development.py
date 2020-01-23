@@ -30,9 +30,6 @@ MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
 # Show emails to console in DEBUG mode
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-# Show thumbnail generation errors
-THUMBNAIL_DEBUG = True
-
 # Allow internal IPs for debugging
 INTERNAL_IPS = ["127.0.0.1", "0.0.0.1"]
 

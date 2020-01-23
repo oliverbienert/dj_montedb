@@ -74,7 +74,6 @@ INSTALLED_APPS = (
     "authtools",
     "crispy_forms",
     "django_tables2",
-    "easy_thumbnails",
     "accounts",
     "montedb",
 )
@@ -132,8 +131,6 @@ MESSAGE_TAGS = {messages.ERROR: "danger"}
 AUTH_USER_MODEL = "authtools.User"
 LOGIN_REDIRECT_URL = reverse_lazy("home")
 LOGIN_URL = reverse_lazy("accounts:login")
-
-THUMBNAIL_EXTENSION = "png"  # Or any extn for your thumbnails
 
 # Django Tables2
 DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"

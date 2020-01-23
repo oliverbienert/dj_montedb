@@ -1,11 +1,11 @@
 argon2-cffi==19.1.0
 django==2.2.9
 django-authtools==1.7.0
+django-braces==1.14.0
 django-crispy-forms==1.7.2
 django-debug-toolbar==2.0
 django-environ==0.4.5
 django-tables2
-easy-thumbnails==2.6
 pip-tools==4.2.0
 pipdeptree==0.13.2
 psycopg2
