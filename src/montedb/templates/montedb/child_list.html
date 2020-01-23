@@ -7,14 +7,9 @@
 {% block title %}{{ block.super }}Children{% endblock %}
 
 {% block editing %}
-<h2>{% block table_heading %}Edit children{% endblock %}</h2>
-<p>
-    <a class="btn btn-info btn-sm" href="{% url 'montedb:child-add' %}">Add child</a>
-</p>
+    <h2>{% block table_heading %}Children{% endblock %}</h2>
 {% endblock %}
 
 {% block table %}
-
-{% render_table table %}
-
+    {% render_table table %}
 {% endblock table %}

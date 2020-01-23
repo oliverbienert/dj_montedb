@@ -1,4 +1,4 @@
-from django_tables2 import tables, TemplateColumn
+from django_tables2 import tables
 
 from .models import Adult, Child
 
@@ -15,8 +15,6 @@ class ChildTable(tables.Table):
         fields = ('first_name', 'last_name', 'birth_date', 'birth_place', 'care_time', 'kita')
         attrs = attrs
 
-    buttons = TemplateColumn(template_name='montedb/child_table_buttons.html', orderable=False, verbose_name="")
-
 
 class AdultTable(tables.Table):
     class Meta:
@@ -25,4 +23,3 @@ class AdultTable(tables.Table):
         sequence = ('first_name', 'last_name', 'birth_date', 'iban', '...')
         attrs = attrs
 
-    buttons = TemplateColumn(template_name='montedb/adult_table_buttons.html', orderable=False, verbose_name="")
