@@ -29,6 +29,15 @@ class Adults(models.Model):
         db_table = 'adults'
 
 
+class AdultsAddresses(models.Model):
+    address = models.ForeignKey(Addresses, models.DO_NOTHING)
+    adults = models.ForeignKey(Adults, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'adults_addresses'
+
+
 class AdultsChildren(models.Model):
     adult = models.ForeignKey(Adults, models.DO_NOTHING)
     child = models.ForeignKey('Children', models.DO_NOTHING)
@@ -59,7 +68,7 @@ class EmailAddresses(models.Model):
         unique_together = (('id', 'email'),)
 
 
-class Income(models.Model):
+class Incomes(models.Model):
     amount = models.IntegerField()
     type = models.CharField(max_length=255)
     adult = models.ForeignKey(Adults, models.DO_NOTHING)
@@ -79,18 +88,9 @@ class Persons(models.Model):
         db_table = 'persons'
 
 
-class PersonsAddresses(models.Model):
-    address = models.ForeignKey(Addresses, models.DO_NOTHING)
-    person = models.ForeignKey(Persons, models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'persons_addresses'
-
-
 class PersonsEmailAddresses(models.Model):
     email_address = models.ForeignKey(EmailAddresses, models.DO_NOTHING)
-    person = models.ForeignKey(Persons, models.DO_NOTHING)
+    adults = models.ForeignKey(Adults, models.DO_NOTHING)
 
     class Meta:
         managed = False
@@ -99,7 +99,7 @@ class PersonsEmailAddresses(models.Model):
 
 class PersonsPhoneNumbers(models.Model):
     phone_number = models.ForeignKey('PhoneNumbers', models.DO_NOTHING)
-    person = models.ForeignKey(Persons, models.DO_NOTHING)
+    adults = models.ForeignKey(Adults, models.DO_NOTHING)
 
     class Meta:
         managed = False
