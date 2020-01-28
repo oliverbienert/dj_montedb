@@ -5,6 +5,7 @@ from .models import Adult, Child, Income
 
 class IncomeInline(admin.TabularInline):
     model = Income
+    extra = 0
 
 
 @admin.register(Adult)
