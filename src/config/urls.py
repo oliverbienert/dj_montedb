@@ -7,8 +7,8 @@ import montedb.urls
 from . import views
 
 # Personalized admin site settings like title and header
-admin.site.site_title = "Dj_Montedb Site Admin"
-admin.site.site_header = "Dj_Montedb Administration"
+admin.site.site_title = "Montehelper Site Admin"
+admin.site.site_header = "Montehelper Administration"
 
 urlpatterns = [
     path("", views.HomePage.as_view(), name="home"),
