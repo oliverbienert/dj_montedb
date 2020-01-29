@@ -6,9 +6,11 @@ django-crispy-forms==1.7.2
 django-debug-toolbar==2.0
 django-environ==0.4.5
 django-jet
+django-phonenumber-field
 django-tables2
 pip-tools==4.2.0
 pipdeptree==0.13.2
+phonenumbers
 psycopg2
 setuptools==41.4.0
 Werkzeug==0.16

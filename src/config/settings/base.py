@@ -75,6 +75,7 @@ INSTALLED_APPS = (
     "authtools",
     "crispy_forms",
     "django_tables2",
+    "phonenumber_field",
     "accounts",
     "montedb",
 )
@@ -135,3 +136,7 @@ LOGIN_URL = reverse_lazy("accounts:login")
 
 # Django Tables2
 DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
+
+# Phone numbers
+PHONENUMBER_DEFAULT_REGION = 'DE'
+PHONENUMBER_DB_FORMAT = 'E164'

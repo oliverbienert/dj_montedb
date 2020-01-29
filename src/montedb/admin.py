@@ -1,27 +1,47 @@
 from django.contrib import admin
 
-from .models import Adult, Child, Income, Address
+from .models import Adult, Child, Income, Address, PhoneNumber, EmailAddress, AdultChild
 
 
-class IncomeInline(admin.TabularInline):
+class MonteDbTabularInline(admin.TabularInline):
+
+    extra = 0
+
+
+class IncomeInline(MonteDbTabularInline):
     
     model = Income
-    extra = 0
+
+
+class PhoneNumberInline(MonteDbTabularInline):
+
+    model = PhoneNumber
+
+
+class EmailAddressInline(MonteDbTabularInline):
+
+    model = EmailAddress
+
+
+class AdultChildInline(MonteDbTabularInline):
+
+    model = AdultChild
 
 
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
-    
-    pass
+
+    def has_module_permission(self, request):
+        return False
 
 
 @admin.register(Adult)
 class AdultAdmin(admin.ModelAdmin):
 
-    inlines = [IncomeInline]
+    inlines = (IncomeInline, PhoneNumberInline, EmailAddressInline, AdultChildInline, )
 
 
 @admin.register(Child)
 class ChildAdmin(admin.ModelAdmin):
     
-    pass
+    inlines = (AdultChildInline, )

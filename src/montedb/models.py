@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.urls import reverse
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Address(models.Model):
@@ -45,6 +46,7 @@ class Adult(Person):
     iban = models.CharField(max_length=32)
     partner = models.OneToOneField("self", on_delete=models.SET_NULL, blank=True, null=True)
     address = models.ForeignKey(Address, related_name='adults', on_delete=models.SET_NULL,  blank=True, null=True)
+    children = models.ManyToManyField(Child, through='AdultChild')
 
     def save(self, recursive=True, *args, **kwargs):
         super(Person, self).save()
@@ -63,14 +65,26 @@ class Adult(Person):
 
 
 class AdultChild(models.Model):
+    MOTHER = 'mother'
+    FATHER = 'father'
+    GRANDMOTHER = 'grandmother'
+    GRANDFATHER = 'grandfather'
+    OTHER = 'other'
+    KINSHIP_TYPE = [
+        (MOTHER, 'Mother'),
+        (FATHER, 'Father'),
+        (GRANDMOTHER, 'Grandmother'),
+        (GRANDMOTHER, 'Grandfather'),
+        (OTHER, 'Other')
+    ]
     adult = models.ForeignKey(Adult, on_delete=models.CASCADE)
     child = models.ForeignKey(Child, on_delete=models.CASCADE)
+    kinship = models.CharField(max_length=20, choices=KINSHIP_TYPE, default=MOTHER)
 
-    PARENT = "PR"
-    KINSHIP = [
-        (PARENT, 'Parent')
-    ]
-    kinship = models.CharField(max_length=2, choices=KINSHIP, default=PARENT)
+    class Meta:
+        verbose_name = 'Degree of kinship'
+        verbose_name_plural = 'Degrees of kinship'
+        unique_together = (('adult', 'child',), ('child', 'kinship',),)
 
 
 class Income(models.Model):
@@ -97,3 +111,44 @@ class Income(models.Model):
     def __str__(self):
         return "{}: {}".format(self.type, self.amount)
 
+
+class PhoneNumber(models.Model):
+    HOME = 'home'
+    WORK = 'work'
+    MOBILE = 'mobile'
+    FAX = 'fax'
+    FON_NUMBER_TYPE = [
+        (HOME, 'Home'),
+        (WORK, 'Work'),
+        (MOBILE, 'Mobile'),
+        (FAX, 'Fax')
+    ]
+    phone_number = PhoneNumberField()
+    type = models.CharField(
+        max_length=10,
+        choices=FON_NUMBER_TYPE,
+        default=HOME
+    )
+    adult = models.ForeignKey(Adult, models.CASCADE)
+
+    class Meta:
+        unique_together = (('adult', 'phone_number'),)
+
+
+class EmailAddress(models.Model):
+    HOME = 'home'
+    WORK = 'work'
+    EMAIL_ADDRESS_TYPE = [
+        (HOME, 'Home'),
+        (WORK, 'Work'),
+    ]
+    email_address = models.EmailField()
+    type = models.CharField(
+        max_length=10,
+        choices=EMAIL_ADDRESS_TYPE,
+        default=HOME
+    )
+    adult = models.ForeignKey(Adult, models.CASCADE)
+
+    class Meta:
+        unique_together = (('adult', 'email_address'),)
