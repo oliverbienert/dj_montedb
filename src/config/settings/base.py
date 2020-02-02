@@ -7,6 +7,8 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
+import os
+
 from django.urls import reverse_lazy
 from pathlib import Path
 
@@ -140,3 +142,7 @@ DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 # Phone numbers
 PHONENUMBER_DEFAULT_REGION = 'DE'
 PHONENUMBER_DB_FORMAT = 'E164'
+
+# File Upload
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

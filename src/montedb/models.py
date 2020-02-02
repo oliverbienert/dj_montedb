@@ -152,3 +152,21 @@ class EmailAddress(models.Model):
 
     class Meta:
         unique_together = (('adult', 'email_address'),)
+
+
+class Ruling(models.Model):
+    SOME_RULING = 'SR'
+    SOME_OTHER_RULING = 'SOR'
+    RULING_TYPE = [
+        (SOME_RULING, 'Some Ruling'),
+        (SOME_OTHER_RULING, 'Some Other Ruling'),
+    ]
+    type = models.CharField(
+        max_length=10,
+        choices=RULING_TYPE,
+        default=SOME_RULING
+    )
+    valid_from = models.DateField(default=datetime.date.today)
+    valid_to = models.DateField(default=datetime.date.today)
+    document = models.FileField(upload_to="documents/")
+    child = models.ForeignKey(Child, models.CASCADE)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Adult, Child, Income, Address, PhoneNumber, EmailAddress, AdultChild
+from .models import Adult, Child, Income, Address, PhoneNumber, EmailAddress, AdultChild, Ruling
 
 
 class MonteDbTabularInline(admin.TabularInline):
@@ -28,6 +28,10 @@ class AdultChildInline(MonteDbTabularInline):
     model = AdultChild
 
 
+class RulingInline(MonteDbTabularInline):
+
+    model = Ruling
+
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
 
@@ -44,4 +48,4 @@ class AdultAdmin(admin.ModelAdmin):
 @admin.register(Child)
 class ChildAdmin(admin.ModelAdmin):
     
-    inlines = (AdultChildInline, )
+    inlines = (AdultChildInline, RulingInline, )
