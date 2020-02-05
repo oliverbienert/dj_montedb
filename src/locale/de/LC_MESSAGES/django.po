@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-05 10:33+0000\n"
-"PO-Revision-Date: 2020-02-05 10:34+0000\n"
+"POT-Creation-Date: 2020-02-05 13:57+0000\n"
+"PO-Revision-Date: 2020-02-05 13:58+0000\n"
 "Last-Translator: b'Anonymous User <oliver@localhost>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -130,8 +130,8 @@ msgstr "Mitarbeiter"
 msgid "Household size"
 msgstr "Personen im Haushalt"
 
-#: montedb/models.py:61 montedb/models.py:93 montedb/models.py:123
-#: montedb/models.py:151 montedb/models.py:173
+#: montedb/models.py:61 montedb/models.py:93 montedb/models.py:125
+#: montedb/models.py:153 montedb/models.py:175
 msgid "Adult"
 msgstr "Erwachsene"
 
@@ -160,75 +160,83 @@ msgstr "Großvater"
 msgid "Other"
 msgstr "Andere"
 
-#: montedb/models.py:95 montedb/models.py:98
+#: montedb/models.py:95 montedb/models.py:100
 msgid "Degree of kinship"
 msgstr "Verwandschaftsgrad"
 
-#: montedb/models.py:99
+#: montedb/models.py:96
+msgid "Liable to contribution"
+msgstr "Elternbeitragspflichtig"
+
+#: montedb/models.py:97
+msgid "Payer"
+msgstr "Zahler"
+
+#: montedb/models.py:101
 msgid "Degrees of kinship"
 msgstr "Verwandschaftsgrade"
 
-#: montedb/models.py:110
+#: montedb/models.py:112
 msgid "Salary"
 msgstr "Lohn"
 
-#: montedb/models.py:111 montedb/models.py:126
+#: montedb/models.py:113 montedb/models.py:128
 msgid "Income"
 msgstr "Einkommen"
 
-#: montedb/models.py:112
+#: montedb/models.py:114
 msgid "Unemployment"
 msgstr "Ersatzleistungen"
 
-#: montedb/models.py:113
+#: montedb/models.py:115
 msgid "Maintenance"
 msgstr "Unterhalt"
 
-#: montedb/models.py:114
+#: montedb/models.py:116
 msgid "Deduction"
 msgstr "Abzug"
 
-#: montedb/models.py:116
+#: montedb/models.py:118
 msgid "Amount"
 msgstr "Betrag"
 
-#: montedb/models.py:118 montedb/models.py:146 montedb/models.py:168
+#: montedb/models.py:120 montedb/models.py:148 montedb/models.py:170
 msgid "Type"
 msgstr "Art"
 
-#: montedb/models.py:127
+#: montedb/models.py:129
 msgid "Incomes"
 msgstr "Einkommen"
 
-#: montedb/models.py:139 montedb/models.py:163
+#: montedb/models.py:141 montedb/models.py:165
 msgid "Private"
 msgstr "Privat"
 
-#: montedb/models.py:140 montedb/models.py:164
+#: montedb/models.py:142 montedb/models.py:166
 msgid "Work"
 msgstr "Dienstlich"
 
-#: montedb/models.py:141
+#: montedb/models.py:143
 msgid "Mobile"
 msgstr "Mobil"
 
-#: montedb/models.py:142
+#: montedb/models.py:144
 msgid "Fax"
 msgstr "Fax"
 
-#: montedb/models.py:144 montedb/models.py:154
+#: montedb/models.py:146 montedb/models.py:156
 msgid "Phone number"
 msgstr "Telefonnummer"
 
-#: montedb/models.py:155
+#: montedb/models.py:157
 msgid "Phone numbers"
 msgstr "Telefonnummern"
 
-#: montedb/models.py:166 montedb/models.py:176
+#: montedb/models.py:168 montedb/models.py:178
 msgid "E-Mail address"
 msgstr "E-Mailadresse"
 
-#: montedb/models.py:177
+#: montedb/models.py:179
 msgid "E-Mail addresses"
 msgstr "E-Mailadressen"
 

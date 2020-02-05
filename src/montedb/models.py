@@ -93,6 +93,8 @@ class AdultChild(models.Model):
     adult = models.ForeignKey(Adult, on_delete=models.CASCADE, verbose_name=_('Adult'))
     child = models.ForeignKey(Child, on_delete=models.CASCADE, verbose_name=_('Child'))
     kinship = models.CharField(_('Degree of kinship'), max_length=20, choices=KINSHIP_TYPE, default=MOTHER)
+    liable = models.BooleanField(_('Liable to contribution'), default=False)
+    payer = models.BooleanField(_('Payer'), default=False)
 
     class Meta:
         verbose_name = _('Degree of kinship')
