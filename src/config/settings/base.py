@@ -7,7 +7,6 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
-from os.path import join
 
 from django.urls import reverse_lazy
 from pathlib import Path
@@ -132,7 +131,7 @@ LANGUAGES = (
 )
 
 LOCALE_PATHS = (
-    join(BASE_DIR, 'locale'),
+    str(BASE_DIR / 'locale'),
 )
 
 
@@ -161,6 +160,3 @@ DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 PHONENUMBER_DEFAULT_REGION = 'DE'
 PHONENUMBER_DB_FORMAT = 'E164'
 
-# File Upload
-MEDIA_URL = '/media/'
-MEDIA_ROOT = join(BASE_DIR, 'media')
