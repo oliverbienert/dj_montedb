@@ -31,13 +31,13 @@ class Person(models.Model):
 
 
 class Child(Person):
-    class Meta:
-        verbose_name = _('Child')
-        verbose_name_plural = _('Children')
-
     birth_place = models.CharField(_('Birth place'), max_length=255)
     care_time = models.IntegerField(_('Care time'), null=False, default=4)
     kita = models.BooleanField(_('Day-care centre'))
+
+    class Meta:
+        verbose_name = _('Child')
+        verbose_name_plural = _('Children')
 
     def get_absolute_url(self):
         return reverse('montedb:child-update', kwargs={'pk': self.pk})
@@ -181,18 +181,30 @@ class EmailAddress(models.Model):
 
 
 class Ruling(models.Model):
-    SOME_RULING = 'SR'
-    SOME_OTHER_RULING = 'SOR'
+    EXTENDED_DAY_TIME = 'ext_day_time'
+    EXTENDED_CARE_TIME = 'ext_care_time'
+    RIGHT_TO_REQUEST = 'right_to_request'
+    FEE_PAYMENT_BY_COUNTY = 'fee_by_county'
+    LUNCH_PAYMENT_BY_COUNTY = 'lunch_by_county'
     RULING_TYPE = [
-        (SOME_RULING, 'Some Ruling'),
-        (SOME_OTHER_RULING, 'Some Other Ruling'),
+        (EXTENDED_DAY_TIME, _('Extended day time')),
+        (EXTENDED_CARE_TIME, _('Extended care time')),
+        (RIGHT_TO_REQUEST, _('Right to request and vote (available care service)')),
+        (FEE_PAYMENT_BY_COUNTY, _('Fee payment by county')),
+        (LUNCH_PAYMENT_BY_COUNTY, _('Lunch payment by county'))
+
     ]
     type = models.CharField(
+        _('Ruling type'),
         max_length=10,
         choices=RULING_TYPE,
-        default=SOME_RULING
     )
-    valid_from = models.DateField(default=datetime.date.today)
-    valid_to = models.DateField(default=datetime.date.today)
-    document = models.FileField(upload_to="documents/")
-    child = models.ForeignKey(Child, models.CASCADE)
+    valid_from = models.DateField(_('Valid from'), default=datetime.date.today)
+    valid_to = models.DateField(_('Valid to'), default=datetime.date.today)
+    # document = models.FileField(_('Document'), upload_to="documents/")
+    child = models.ForeignKey(Child, models.CASCADE, verbose_name=_('Child'))
+
+    class Meta:
+        verbose_name = _('Ruling')
+        verbose_name_plural = _('Rulings')
+

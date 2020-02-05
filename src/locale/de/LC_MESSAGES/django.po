@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-05 13:57+0000\n"
-"PO-Revision-Date: 2020-02-05 13:58+0000\n"
+"POT-Creation-Date: 2020-02-05 14:31+0000\n"
+"PO-Revision-Date: 2020-02-05 14:32+0000\n"
 "Last-Translator: b'Anonymous User <oliver@localhost>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -92,27 +92,27 @@ msgstr "Vorname"
 msgid "Birth date"
 msgstr "Geburtstag"
 
-#: montedb/models.py:35 montedb/models.py:94
+#: montedb/models.py:34
+msgid "Birth place"
+msgstr "Geburtsort"
+
+#: montedb/models.py:35
+msgid "Care time"
+msgstr "Betreuungszeit"
+
+#: montedb/models.py:36
+msgid "Day-care centre"
+msgstr "Kita"
+
+#: montedb/models.py:39 montedb/models.py:94 montedb/models.py:205
 msgid "Child"
 msgstr "Kind"
 
-#: montedb/models.py:36 montedb/models.py:54
+#: montedb/models.py:40 montedb/models.py:54
 #: montedb/templates/montedb/child_list.html:7
 #: montedb/templates/montedb/child_list.html:10 templates/home.html:51
 msgid "Children"
 msgstr "Kinder"
-
-#: montedb/models.py:38
-msgid "Birth place"
-msgstr "Geburtsort"
-
-#: montedb/models.py:39
-msgid "Care time"
-msgstr "Betreuungszeit"
-
-#: montedb/models.py:40
-msgid "Day-care centre"
-msgstr "Kita"
 
 #: montedb/models.py:51
 msgid "Partner"
@@ -239,6 +239,48 @@ msgstr "E-Mailadresse"
 #: montedb/models.py:179
 msgid "E-Mail addresses"
 msgstr "E-Mailadressen"
+
+#: montedb/models.py:190
+msgid "Extended day time"
+msgstr "Erweiterte Betreuungszeit"
+
+#: montedb/models.py:191
+msgid "Extended care time"
+msgstr "Verlängerte Betreuungszeit"
+
+#: montedb/models.py:192
+msgid "Right to request and vote (available care service)"
+msgstr "Wunsch- und Wahlrecht"
+
+#: montedb/models.py:193
+msgid "Fee payment by county"
+msgstr "Übernahme von Gebühren durch Landkreis"
+
+#: montedb/models.py:194
+msgid "Lunch payment by county"
+msgstr "Übernahme von Essenkosten durch Landkreis"
+
+#: montedb/models.py:198
+msgid "Ruling type"
+msgstr "Anträge und Bescheide"
+
+#: montedb/models.py:202
+msgid "Valid from"
+msgstr "Gültig ab"
+
+#: montedb/models.py:203
+msgid "Valid to"
+msgstr "Gültig bis"
+
+#: montedb/models.py:208
+#| msgid "Ruling type"
+msgid "Ruling"
+msgstr "Antrag/Bescheid"
+
+#: montedb/models.py:209
+#| msgid "Ruling type"
+msgid "Rulings"
+msgstr "Anträge und Bescheide"
 
 #: templates/base.html:67
 msgid "Logout"

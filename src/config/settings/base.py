@@ -68,7 +68,7 @@ ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(',')
 
 INSTALLED_APPS = (
     "django.contrib.auth",
-    "jet",
+    "grappelli",
     "django.contrib.admin",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -110,7 +110,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en-usg"
 
 TIME_ZONE = "UTC"
 
