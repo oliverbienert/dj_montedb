@@ -50,5 +50,8 @@ class AdultAdmin(admin.ModelAdmin):
 
 @admin.register(Child)
 class ChildAdmin(admin.ModelAdmin):
-    
+
+    class Media:
+        js = ("/static/grappelli/jquery/i18n/ui.datepicker-de.js", )
+
     inlines = (AdultChildInline, RulingInline, )
