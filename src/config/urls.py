@@ -13,8 +13,8 @@ admin.site.site_header = "Montehelper Administration"
 urlpatterns = [
     path("", views.HomePage.as_view(), name="home"),
     path("montedb/", include(montedb.urls)),
-    path("jet/", include("jet.urls", "jet")),
     path("admin/", admin.site.urls),
+    path("rosetta", include('rosetta.urls')),
     path("", include(accounts.urls)),
 ]
 

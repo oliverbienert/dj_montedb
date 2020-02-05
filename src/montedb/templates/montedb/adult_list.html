@@ -1,13 +1,14 @@
 {% extends "montedb/table_base.html" %}
+{% load i18n %}
 
 {% load staticfiles %}
 
 {% load render_table from django_tables2 %}
 
-{% block title %}{{ block.super }}Adults{% endblock %}
+{% block title %}{{ block.super }}{% trans 'Adults' %}{% endblock %}
 
 {% block editing %}
-    <h5>{% block table_heading %}Adults{% endblock %}</h5>
+    <h5>{% block table_heading %}{% trans 'Adults' %}{% endblock %}</h5>
 {% endblock %}
 
 {% block table %}
