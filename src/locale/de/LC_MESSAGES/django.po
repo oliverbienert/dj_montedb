@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-05 08:41+0000\n"
-"PO-Revision-Date: 2020-02-05 08:43+0000\n"
+"POT-Creation-Date: 2020-02-05 10:33+0000\n"
+"PO-Revision-Date: 2020-02-05 10:34+0000\n"
 "Last-Translator: b'Anonymous User <oliver@localhost>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -48,175 +48,187 @@ msgstr "Danke, dass Sie unsere Seite benutzen!"
 msgid "The %(site_name)s team"
 msgstr "Das %(site_name) team"
 
-#: config/settings/base.py:129
+#: config/settings/base.py:130
 msgid "English"
 msgstr "Englisch"
 
-#: config/settings/base.py:130
+#: config/settings/base.py:131
 msgid "German"
 msgstr "Deutsch"
 
-#: montedb/models.py:10
+#: montedb/models.py:11
 msgid "Street"
 msgstr "Straße"
 
-#: montedb/models.py:11
+#: montedb/models.py:12
 msgid "House number"
 msgstr "Hausnummer"
 
-#: montedb/models.py:12
+#: montedb/models.py:13
 msgid "ZIP code"
 msgstr "PLZ"
 
-#: montedb/models.py:13
+#: montedb/models.py:14
 msgid "City"
 msgstr "Ort"
 
-#: montedb/models.py:16 montedb/models.py:51
+#: montedb/models.py:17 montedb/models.py:52
 msgid "Address"
 msgstr "Adresse"
 
-#: montedb/models.py:17
+#: montedb/models.py:18
 msgid "Addresses"
 msgstr "Adressen"
 
-#: montedb/models.py:24
+#: montedb/models.py:25
 msgid "Last name"
 msgstr "Nachname"
 
-#: montedb/models.py:25
+#: montedb/models.py:26
 msgid "First name"
 msgstr "Vorname"
 
-#: montedb/models.py:26
+#: montedb/models.py:27
 msgid "Birth date"
 msgstr "Geburtstag"
 
-#: montedb/models.py:34 montedb/models.py:88
+#: montedb/models.py:35 montedb/models.py:94
 msgid "Child"
 msgstr "Kind"
 
-#: montedb/models.py:35 montedb/models.py:52
+#: montedb/models.py:36 montedb/models.py:54
 #: montedb/templates/montedb/child_list.html:7
 #: montedb/templates/montedb/child_list.html:10 templates/home.html:51
 msgid "Children"
 msgstr "Kinder"
 
-#: montedb/models.py:37
+#: montedb/models.py:38
 msgid "Birth place"
 msgstr "Geburtsort"
 
-#: montedb/models.py:38
+#: montedb/models.py:39
 msgid "Care time"
 msgstr "Betreuungszeit"
 
-#: montedb/models.py:39
+#: montedb/models.py:40
 msgid "Day-care centre"
 msgstr "Kita"
 
-#: montedb/models.py:50
+#: montedb/models.py:51
 msgid "Partner"
 msgstr "Partner"
 
-#: montedb/models.py:55 montedb/models.py:87 montedb/models.py:117
-#: montedb/models.py:145 montedb/models.py:167
+#: montedb/models.py:55
+msgid "Club member"
+msgstr "Vereinsmitglied"
+
+#: montedb/models.py:56
+msgid "Staff"
+msgstr "Mitarbeiter"
+
+#: montedb/models.py:57
+msgid "Household size"
+msgstr "Personen im Haushalt"
+
+#: montedb/models.py:61 montedb/models.py:93 montedb/models.py:123
+#: montedb/models.py:151 montedb/models.py:173
 msgid "Adult"
 msgstr "Erwachsene"
 
-#: montedb/models.py:56 montedb/templates/montedb/adult_list.html:8
+#: montedb/models.py:62 montedb/templates/montedb/adult_list.html:8
 #: montedb/templates/montedb/adult_list.html:11 templates/home.html:56
 msgid "Adults"
 msgstr "Erwachsene"
 
-#: montedb/models.py:81
+#: montedb/models.py:87
 msgid "Mother"
 msgstr "Mutter"
 
-#: montedb/models.py:82
+#: montedb/models.py:88
 msgid "Father"
 msgstr "Vater"
 
-#: montedb/models.py:83
+#: montedb/models.py:89
 msgid "Grandmother"
 msgstr "Großmutter"
 
-#: montedb/models.py:84
+#: montedb/models.py:90
 msgid "Grandfather"
 msgstr "Großvater"
 
-#: montedb/models.py:85
+#: montedb/models.py:91
 msgid "Other"
 msgstr "Andere"
 
-#: montedb/models.py:89 montedb/models.py:92
+#: montedb/models.py:95 montedb/models.py:98
 msgid "Degree of kinship"
 msgstr "Verwandschaftsgrad"
 
-#: montedb/models.py:93
+#: montedb/models.py:99
 msgid "Degrees of kinship"
 msgstr "Verwandschaftsgrade"
 
-#: montedb/models.py:104
+#: montedb/models.py:110
 msgid "Salary"
 msgstr "Lohn"
 
-#: montedb/models.py:105 montedb/models.py:120
+#: montedb/models.py:111 montedb/models.py:126
 msgid "Income"
 msgstr "Einkommen"
 
-#: montedb/models.py:106
+#: montedb/models.py:112
 msgid "Unemployment"
 msgstr "Ersatzleistungen"
 
-#: montedb/models.py:107
+#: montedb/models.py:113
 msgid "Maintenance"
 msgstr "Unterhalt"
 
-#: montedb/models.py:108
+#: montedb/models.py:114
 msgid "Deduction"
 msgstr "Abzug"
 
-#: montedb/models.py:110
+#: montedb/models.py:116
 msgid "Amount"
 msgstr "Betrag"
 
-#: montedb/models.py:112 montedb/models.py:140 montedb/models.py:162
+#: montedb/models.py:118 montedb/models.py:146 montedb/models.py:168
 msgid "Type"
 msgstr "Art"
 
-#: montedb/models.py:121
+#: montedb/models.py:127
 msgid "Incomes"
 msgstr "Einkommen"
 
-#: montedb/models.py:133 montedb/models.py:157
+#: montedb/models.py:139 montedb/models.py:163
 msgid "Private"
 msgstr "Privat"
 
-#: montedb/models.py:134 montedb/models.py:158
+#: montedb/models.py:140 montedb/models.py:164
 msgid "Work"
 msgstr "Dienstlich"
 
-#: montedb/models.py:135
+#: montedb/models.py:141
 msgid "Mobile"
 msgstr "Mobil"
 
-#: montedb/models.py:136
+#: montedb/models.py:142
 msgid "Fax"
 msgstr "Fax"
 
-#: montedb/models.py:138 montedb/models.py:148
+#: montedb/models.py:144 montedb/models.py:154
 msgid "Phone number"
 msgstr "Telefonnummer"
 
-#: montedb/models.py:149
+#: montedb/models.py:155
 msgid "Phone numbers"
 msgstr "Telefonnummern"
 
-#: montedb/models.py:160 montedb/models.py:170
+#: montedb/models.py:166 montedb/models.py:176
 msgid "E-Mail address"
 msgstr "E-Mailadresse"
 
-#: montedb/models.py:171
+#: montedb/models.py:177
 msgid "E-Mail addresses"
 msgstr "E-Mailadressen"
 

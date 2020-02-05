@@ -1,5 +1,6 @@
 import datetime
 
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
@@ -14,7 +15,7 @@ class Address(models.Model):
 
     class Meta:
         verbose_name = _('Address')
-        verbose_name_plural=_('Addresses')
+        verbose_name_plural = _('Addresses')
 
     def __str__(self):
         return '{} {}, {} {}'.format(self.street, self.house_number, self.zip_code, self.city)
@@ -48,8 +49,13 @@ class Child(Person):
 class Adult(Person):
     iban = models.CharField('IBAN', max_length=32)
     partner = models.OneToOneField('self', verbose_name=_('Partner'), on_delete=models.SET_NULL, blank=True, null=True)
-    address = models.ForeignKey(Address, verbose_name=_('Address'), related_name='adults', on_delete=models.SET_NULL,  blank=True, null=True)
+    address = models.ForeignKey(Address, verbose_name=_('Address'), related_name='adults', on_delete=models.SET_NULL,
+                                blank=True, null=True)
     children = models.ManyToManyField(Child, through='AdultChild', verbose_name=_('Children'))
+    club_member = models.BooleanField(_('Club member'), default=False)
+    staff = models.BooleanField(_('Staff'), default=False)
+    household_size = models.IntegerField(_('Household size'), null=True, blank=True,
+                                         validators=[MaxValueValidator(10), MinValueValidator(1)])
 
     class Meta:
         verbose_name = _('Adult')
