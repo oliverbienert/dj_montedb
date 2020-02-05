@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-05 14:31+0000\n"
+"POT-Creation-Date: 2020-02-05 15:18+0000\n"
 "PO-Revision-Date: 2020-02-05 14:32+0000\n"
 "Last-Translator: b'Anonymous User <oliver@localhost>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,16 +25,13 @@ msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at %(site_name)s."
 msgstr ""
-"Sie erhalten diese E-Mail weil Sie ein neues Passwort für Ihr Benutzerkonto "
-"auf %(site_name) angefordert haben."
 
 #: accounts/templates/accounts/emails/password-reset-email.html:4
 msgid "Please go to the following page and choose a new password:"
 msgstr "Bitte gehen Sie auf folgende Seite und wählen ein neues Passwort"
 
 #: accounts/templates/accounts/emails/password-reset-email.html:8
-msgid ""
-"Your login email, in case you've forgotten, is same this email address:"
+msgid "Your login email, in case you've forgotten, is same this email address:"
 msgstr ""
 "Falls Sie es vergessen haben, Ihre Login E-Mail-Addresse ist identisch mit "
 "dieser Addresse:"
@@ -46,13 +43,13 @@ msgstr "Danke, dass Sie unsere Seite benutzen!"
 #: accounts/templates/accounts/emails/password-reset-email.html:12
 #, python-format
 msgid "The %(site_name)s team"
-msgstr "Das %(site_name) team"
+msgstr ""
 
-#: config/settings/base.py:130
+#: config/settings/base.py:129
 msgid "English"
 msgstr "Englisch"
 
-#: config/settings/base.py:131
+#: config/settings/base.py:130
 msgid "German"
 msgstr "Deutsch"
 
@@ -273,12 +270,10 @@ msgid "Valid to"
 msgstr "Gültig bis"
 
 #: montedb/models.py:208
-#| msgid "Ruling type"
 msgid "Ruling"
 msgstr "Antrag/Bescheid"
 
 #: montedb/models.py:209
-#| msgid "Ruling type"
 msgid "Rulings"
 msgstr "Anträge und Bescheide"
 
