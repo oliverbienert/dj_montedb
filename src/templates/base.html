@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load staticfiles %}
+{% load i18n %}
 
 <head>
     <meta charset="utf-8">
@@ -63,12 +64,12 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" role="menu">
-                            <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a>
-                            <a class="dropdown-item" href="{% url 'accounts:password-change' %}">Password Change</a>
+                            <a class="dropdown-item" href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a>
+                            <a class="dropdown-item" href="{% url 'accounts:password-change' %}">{% trans 'Password Change' %}</a>
                         </div>
                     </li>
                 {% else %}
-                    <a class="btn btn-primary" href="{% url 'accounts:login' %}" role="button">Log in</a>
+                    <a class="btn btn-primary" href="{% url 'accounts:login' %}" role="button">{% trans 'Log in '%}</a>
                 {% endif %}
             </ul>
         </div>

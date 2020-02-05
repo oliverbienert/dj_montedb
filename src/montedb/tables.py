@@ -4,7 +4,7 @@ from .models import Adult, Child
 
 attrs = {
     'data-toggle': 'table',
-    'data-classes': 'table table-striped table-hover',
+    'data-classes': 'table table-striped table-hover table-sm',
     'data-mobile-responsive': 'true'
 }
 

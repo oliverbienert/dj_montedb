@@ -42,6 +42,9 @@ class AddressAdmin(admin.ModelAdmin):
 @admin.register(Adult)
 class AdultAdmin(admin.ModelAdmin):
 
+    class Media:
+        js = ("/static/grappelli/jquery/i18n/ui.datepicker-de.js", )
+
     inlines = (IncomeInline, PhoneNumberInline, EmailAddressInline, AdultChildInline, )
 
 

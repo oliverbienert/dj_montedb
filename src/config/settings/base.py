@@ -7,7 +7,7 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
-import os
+from os.path import join
 
 from django.urls import reverse_lazy
 from pathlib import Path
@@ -74,6 +74,7 @@ INSTALLED_APPS = (
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rosetta',
     "authtools",
     "crispy_forms",
     "django_tables2",
@@ -85,6 +86,7 @@ INSTALLED_APPS = (
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -118,6 +120,22 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# Model i18n
+def gettext(s):
+    return s
+
+
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('de', gettext('German')),
+)
+
+LOCALE_PATHS = (
+    join(BASE_DIR, 'locale'),
+)
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
@@ -145,4 +163,4 @@ PHONENUMBER_DB_FORMAT = 'E164'
 
 # File Upload
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = join(BASE_DIR, 'media')
