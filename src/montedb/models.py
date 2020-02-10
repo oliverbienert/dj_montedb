@@ -133,7 +133,7 @@ class Income(models.Model):
 
 
 class PhoneNumber(models.Model):
-    PRIVATE = 'privat'
+    PRIVATE = 'private'
     WORK = 'work'
     MOBILE = 'mobile'
     FAX = 'fax'

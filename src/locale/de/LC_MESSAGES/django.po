@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-10 11:15+0000\n"
-"PO-Revision-Date: 2020-02-10 11:11+0000\n"
+"POT-Creation-Date: 2020-02-10 18:59+0000\n"
+"PO-Revision-Date: 2020-02-10 19:00+0000\n"
 "Last-Translator: b'Anonymous User <oliver@localhost>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,6 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
+
+#: accounts/forms.py:13
+msgid "Remember me"
+msgstr "Anmeldedaten merken"
 
 #: accounts/forms.py:21 accounts/forms.py:38
 msgid "Enter Email"
@@ -32,10 +36,12 @@ msgid "Forgot Password?"
 msgstr "Passwort vergessen?"
 
 #: accounts/forms.py:26
-#, fuzzy
-#| msgid "Remember me"
 msgid "Remember Me"
 msgstr "Anmeldedaten merken"
+
+#: accounts/forms.py:27
+msgid "Log in"
+msgstr "Anmelden"
 
 #: accounts/forms.py:39
 msgid "Enter Full Name"
@@ -87,7 +93,8 @@ msgid "Please go to the following page and choose a new password:"
 msgstr "Bitte gehen Sie auf folgende Seite und wählen ein neues Passwort"
 
 #: accounts/templates/accounts/emails/password-reset-email.html:9
-msgid "Your login email, in case you've forgotten, is same this email address:"
+msgid ""
+"Your login email, in case you've forgotten, is same this email address:"
 msgstr ""
 "Falls Sie es vergessen haben, Ihre Login E-Mail-Addresse ist identisch mit "
 "dieser Addresse:"
@@ -145,6 +152,19 @@ msgstr "Englisch"
 #: config/settings/base.py:130
 msgid "German"
 msgstr "Deutsch"
+
+#: montedb/admin.py:63
+#| msgid "Enter Full Name"
+msgid "Full name"
+msgstr "Name"
+
+#: montedb/admin.py:70 montedb/models.py:141 montedb/models.py:165
+msgid "Private"
+msgstr "Privat"
+
+#: montedb/admin.py:76 montedb/models.py:142 montedb/models.py:166
+msgid "Work"
+msgstr "Dienstlich"
 
 #: montedb/models.py:11
 msgid "Street"
@@ -298,14 +318,6 @@ msgstr "Art"
 msgid "Incomes"
 msgstr "Einkommen"
 
-#: montedb/models.py:141 montedb/models.py:165
-msgid "Private"
-msgstr "Privat"
-
-#: montedb/models.py:142 montedb/models.py:166
-msgid "Work"
-msgstr "Dienstlich"
-
 #: montedb/models.py:143
 msgid "Mobile"
 msgstr "Mobil"
@@ -409,3 +421,6 @@ msgstr "Exportieren"
 #: templates/home.html:82
 msgid "This week"
 msgstr "Diese Woche"
+
+#~ msgid "Name"
+#~ msgstr "Name"
