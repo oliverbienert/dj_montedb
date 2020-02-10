@@ -44,7 +44,10 @@ class AddressAdmin(admin.ModelAdmin):
 class AdultAdmin(admin.ModelAdmin):
 
     class Media:
-        js = ("/static/grappelli/jquery/i18n/ui.datepicker-de.js", )
+        js = (
+            "/static/jquery/js/i18n/datepicker-de.js",
+            "/static/site/js/changeyear.js",
+        )
 
     inlines = (IncomeInline, PhoneNumberInline, EmailAddressInline, AdultChildInline, )
 
@@ -53,6 +56,9 @@ class AdultAdmin(admin.ModelAdmin):
 class ChildAdmin(admin.ModelAdmin):
 
     class Media:
-        js = ("/static/grappelli/jquery/i18n/ui.datepicker-de.js", )
+        js = (
+            "/static/jquery/js/i18n/datepicker-de.js",
+            "/static/site/js/changeyear.js",
+        )
 
     inlines = (AdultChildInline, RulingInline, )
