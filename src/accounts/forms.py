@@ -6,10 +6,11 @@ from crispy_forms.layout import Layout, Submit, HTML, Field
 from authtools import forms as authtoolsforms
 from django.contrib.auth import forms as authforms
 from django.urls import reverse
+from django.utils.translation import ugettext_lazy as _
 
 
 class LoginForm(AuthenticationForm):
-    remember_me = forms.BooleanField(required=False, initial=False)
+    remember_me = forms.BooleanField(label=_('Remember me'), required=False, initial=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -17,15 +18,13 @@ class LoginForm(AuthenticationForm):
         self.fields["username"].widget.input_type = "email"  # ugly hack
 
         self.helper.layout = Layout(
-            Field("username", placeholder="Enter Email", autofocus=""),
-            Field("password", placeholder="Enter Password"),
+            Field("username", placeholder=_("Enter Email"), autofocus=""),
+            Field("password", placeholder=_("Enter Password")),
             HTML(
-                '<a href="{}">Forgot Password?</a>'.format(
-                    reverse("accounts:password-reset")
-                )
+                '<a href="{}">{}</a>'.format(reverse("accounts:password-reset"), _('Forgot Password?'))
             ),
-            Field("remember_me"),
-            Submit("sign_in", "Log in", css_class="btn btn-lg btn-primary btn-block"),
+            Field("remember_me", placeholder=_("Remember Me")),
+            Submit("sign_in", _("Log in"), css_class="btn btn-lg btn-primary btn-block"),
         )
 
 
@@ -36,11 +35,11 @@ class SignupForm(authtoolsforms.UserCreationForm):
         self.fields["email"].widget.input_type = "email"  # ugly hack
 
         self.helper.layout = Layout(
-            Field("email", placeholder="Enter Email", autofocus=""),
-            Field("name", placeholder="Enter Full Name"),
-            Field("password1", placeholder="Enter Password"),
-            Field("password2", placeholder="Re-enter Password"),
-            Submit("sign_up", "Sign up", css_class="btn-warning"),
+            Field("email", placeholder=_("Enter Email"), autofocus=""),
+            Field("name", placeholder=_("Enter Full Name")),
+            Field("password1", placeholder=_("Enter Password")),
+            Field("password2", placeholder=_("Re-enter Password")),
+            Submit("sign_up", _("Sign up"), css_class="btn-warning"),
         )
 
 
@@ -50,10 +49,10 @@ class PasswordChangeForm(authforms.PasswordChangeForm):
         self.helper = FormHelper()
 
         self.helper.layout = Layout(
-            Field("old_password", placeholder="Enter old password", autofocus=""),
-            Field("new_password1", placeholder="Enter new password"),
-            Field("new_password2", placeholder="Enter new password (again)"),
-            Submit("pass_change", "Change Password", css_class="btn-warning"),
+            Field("old_password", placeholder=_("Enter old password"), autofocus=""),
+            Field("new_password1", placeholder=_("Enter new password")),
+            Field("new_password2", placeholder=_("Enter new password (again)")),
+            Submit("pass_change", _("Change Password"), css_class="btn-warning"),
         )
 
 
@@ -63,8 +62,8 @@ class PasswordResetForm(authtoolsforms.FriendlyPasswordResetForm):
         self.helper = FormHelper()
 
         self.helper.layout = Layout(
-            Field("email", placeholder="Enter email", autofocus=""),
-            Submit("pass_reset", "Reset Password", css_class="btn-warning"),
+            Field("email", placeholder=_("Enter email"), autofocus=""),
+            Submit("pass_reset", _("Reset Password"), css_class="btn-warning"),
         )
 
 
@@ -74,7 +73,7 @@ class SetPasswordForm(authforms.SetPasswordForm):
         self.helper = FormHelper()
 
         self.helper.layout = Layout(
-            Field("new_password1", placeholder="Enter new password", autofocus=""),
-            Field("new_password2", placeholder="Enter new password (again)"),
-            Submit("pass_change", "Change Password", css_class="btn-warning"),
+            Field("new_password1", placeholder=_("Enter new password"), autofocus=""),
+            Field("new_password2", placeholder=_("Enter new password (again)")),
+            Submit("pass_change", _("Change Password"), css_class="btn-warning"),
         )

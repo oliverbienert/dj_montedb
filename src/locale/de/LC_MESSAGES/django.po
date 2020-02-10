@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-05 15:18+0000\n"
-"PO-Revision-Date: 2020-02-05 14:32+0000\n"
+"POT-Creation-Date: 2020-02-10 11:15+0000\n"
+"PO-Revision-Date: 2020-02-10 11:11+0000\n"
 "Last-Translator: b'Anonymous User <oliver@localhost>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,31 +19,124 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
-#: accounts/templates/accounts/emails/password-reset-email.html:2
+#: accounts/forms.py:21 accounts/forms.py:38
+msgid "Enter Email"
+msgstr "E-Mailadresse eingeben"
+
+#: accounts/forms.py:22 accounts/forms.py:40
+msgid "Enter Password"
+msgstr "Passwort eingeben"
+
+#: accounts/forms.py:24
+msgid "Forgot Password?"
+msgstr "Passwort vergessen?"
+
+#: accounts/forms.py:26
+#, fuzzy
+#| msgid "Remember me"
+msgid "Remember Me"
+msgstr "Anmeldedaten merken"
+
+#: accounts/forms.py:39
+msgid "Enter Full Name"
+msgstr "Vollen Namen eintragen"
+
+#: accounts/forms.py:41
+msgid "Re-enter Password"
+msgstr "Passwort nochmal eingeben"
+
+#: accounts/forms.py:42
+msgid "Sign up"
+msgstr "Anmelden"
+
+#: accounts/forms.py:52
+msgid "Enter old password"
+msgstr "Altes Passwort eingeben"
+
+#: accounts/forms.py:53 accounts/forms.py:76
+msgid "Enter new password"
+msgstr "Neues Passwort eingeben"
+
+#: accounts/forms.py:54 accounts/forms.py:77
+msgid "Enter new password (again)"
+msgstr "Neues Passwort nochmal eingeben"
+
+#: accounts/forms.py:55 accounts/forms.py:78
+msgid "Change Password"
+msgstr "Passwort erneuern"
+
+#: accounts/forms.py:65
+msgid "Enter email"
+msgstr "E-Mailadresse eingeben"
+
+#: accounts/forms.py:66
+msgid "Reset Password"
+msgstr "Passwort zurücksetzen"
+
+#: accounts/templates/accounts/emails/password-reset-email.html:3
 #, python-format
 msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at %(site_name)s."
 msgstr ""
+"Sie erhalten diese Nachricht, weil Sie für Ihr Benutzerkonto %(site_name)s "
+"ein neues Passwort angefordert haben."
 
-#: accounts/templates/accounts/emails/password-reset-email.html:4
+#: accounts/templates/accounts/emails/password-reset-email.html:5
 msgid "Please go to the following page and choose a new password:"
 msgstr "Bitte gehen Sie auf folgende Seite und wählen ein neues Passwort"
 
-#: accounts/templates/accounts/emails/password-reset-email.html:8
+#: accounts/templates/accounts/emails/password-reset-email.html:9
 msgid "Your login email, in case you've forgotten, is same this email address:"
 msgstr ""
 "Falls Sie es vergessen haben, Ihre Login E-Mail-Addresse ist identisch mit "
 "dieser Addresse:"
 
-#: accounts/templates/accounts/emails/password-reset-email.html:10
+#: accounts/templates/accounts/emails/password-reset-email.html:11
 msgid "Thanks for using our site!"
 msgstr "Danke, dass Sie unsere Seite benutzen!"
 
-#: accounts/templates/accounts/emails/password-reset-email.html:12
+#: accounts/templates/accounts/emails/password-reset-email.html:13
 #, python-format
 msgid "The %(site_name)s team"
+msgstr "Das %(site_name)s Team"
+
+#: accounts/templates/accounts/login.html:6
+msgid "Log In"
+msgstr "Anmelden"
+
+#: accounts/templates/accounts/login.html:8
+msgid "Please Log In"
+msgstr "Bitte melden Sie sich an"
+
+#: accounts/templates/accounts/password-change.html:6
+#: accounts/templates/accounts/password-change.html:8
+#: accounts/templates/accounts/password-reset-confirm.html:6
+#: accounts/templates/accounts/password-reset-confirm.html:8
+#: templates/base.html:68
+msgid "Password Change"
+msgstr "Passwort erneuern"
+
+#: accounts/templates/accounts/password-reset-done.html:6
+msgid "Password Reset Done"
+msgstr "Passwort erneuert"
+
+#: accounts/templates/accounts/password-reset-done.html:8
+msgid "Password Reset Email Sent"
+msgstr "Die Nachricht zum Zurücksetzen des Passwortes wurde verschickt"
+
+#: accounts/templates/accounts/password-reset-done.html:13
+msgid ""
+"Please check your mail. You would have received a password reset mail from "
+"us."
 msgstr ""
+"Bitte kontrollieren Sie Ihren Posteingang. Sie sollten eine Nachricht für "
+"das Zurücksetzen Ihres Passwortes erhalten haben."
+
+#: accounts/templates/accounts/password-reset.html:6
+#: accounts/templates/accounts/password-reset.html:8
+msgid "Password Reset"
+msgstr "Passwort erneuern"
 
 #: config/settings/base.py:129
 msgid "English"
@@ -280,10 +373,6 @@ msgstr "Anträge und Bescheide"
 #: templates/base.html:67
 msgid "Logout"
 msgstr "Abmelden"
-
-#: templates/base.html:68
-msgid "Password Change"
-msgstr "Passwort erneuern"
 
 #: templates/base.html:72
 msgid "Log in "

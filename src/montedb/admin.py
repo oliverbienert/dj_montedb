@@ -32,6 +32,7 @@ class RulingInline(MonteDbTabularInline):
 
     model = Ruling
 
+
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
 
