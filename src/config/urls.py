@@ -15,7 +15,6 @@ urlpatterns = [
     path("montedb/", include(montedb.urls)),
     path("grappelli/", include('grappelli.urls')),
     path("admin/", admin.site.urls),
-    path("rosetta", include('rosetta.urls')),
     path("", include(accounts.urls)),
 ]
 

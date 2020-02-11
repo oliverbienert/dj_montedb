@@ -6,32 +6,25 @@
 #
 argon2-cffi==19.1.0
 babel==2.8.0              # via django-phonenumber-field
-certifi==2019.11.28       # via requests
 cffi==1.13.2              # via argon2-cffi
-chardet==3.0.4            # via requests
 click==7.0                # via pip-tools
 django-authtools==1.7.0
 django-braces==1.14.0
 django-crispy-forms==1.7.2
-django-debug-toolbar==2.0
+django-debug-toolbar==2.2
 django-environ==0.4.5
-django-grappelli==2.13.3
+django-grappelli==2.14.1
 django-phonenumber-field==4.0.0
-django-rosetta==0.9.3
 django-tables2==2.2.1
 django==2.2.9
-idna==2.8                 # via requests
 phonenumbers==8.11.2
 pip-tools==4.2.0
 pipdeptree==0.13.2
-polib==1.1.0              # via django-rosetta
 psycopg2==2.8.4
 pycparser==2.19           # via cffi
 pytz==2019.3              # via babel, django
-requests==2.22.0          # via django-rosetta
-six==1.13.0               # via argon2-cffi, django-braces, django-rosetta, pip-tools
+six==1.13.0               # via argon2-cffi, django-braces, django-grappelli, pip-tools
 sqlparse==0.3.0           # via django, django-debug-toolbar
-urllib3==1.25.8           # via requests
 werkzeug==0.16
 wheel==0.33.6
 
