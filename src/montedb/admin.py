@@ -47,7 +47,8 @@ class AddressAdmin(admin.ModelAdmin):
 @admin.register(Adult)
 class AdultAdmin(admin.ModelAdmin):
 
-    list_display = ('full_name', 'address', 'phone_private', 'phone_work')
+    list_display = ('full_name', 'address', 'phone_private', 'phone_work', 'phone_mobile',
+                    'email_private', 'email_work')
 
     class Media:
         js = (
@@ -75,9 +76,29 @@ class AdultAdmin(admin.ModelAdmin):
 
     phone_work.short_description = _("Work")
 
+    def phone_mobile(self, obj):
+        lst = [item.phone_number.as_international for item in obj.phonenumber_set.filter(type__exact='mobile')]
+        return ", ".join(lst)
+
+    phone_mobile.short_description = _("Mobile")
+
+    def email_private(self, obj):
+        lst = [item.email_address for item in obj.emailaddress_set.filter(type__exact='private')]
+        return ", ".join(lst)
+
+    email_private.short_description = _("E-Mail (Private)")
+
+    def email_work(self, obj):
+        lst = [item.email_address for item in obj.emailaddress_set.filter(type__exact='work')]
+        return ", ".join(lst)
+
+    email_work.short_description = _("E-Mail (Work)")
+
 
 @admin.register(Child)
 class ChildAdmin(admin.ModelAdmin):
+
+    list_display = ('full_name', 'care_time', 'age')
 
     class Media:
         js = (
@@ -86,3 +107,9 @@ class ChildAdmin(admin.ModelAdmin):
         )
 
     inlines = (AdultChildInline, RulingInline, )
+
+    def full_name(self, obj):
+        return obj.first_name + ' ' + obj.last_name
+
+    full_name.short_description = _('Full name')
+    full_name.admin_order_field = Concat('first_name', Value(' '), 'last_name')

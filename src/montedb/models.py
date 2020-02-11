@@ -42,6 +42,13 @@ class Child(Person):
     def get_absolute_url(self):
         return reverse('montedb:child-update', kwargs={'pk': self.pk})
 
+    def age(self):
+        today = datetime.date.today()
+        born = self.birth_date
+        return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+
+    age.short_description = _('Age')
+
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
 
