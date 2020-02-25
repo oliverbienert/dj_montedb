@@ -101,6 +101,7 @@ class AdultChild(models.Model):
     child = models.ForeignKey(Child, on_delete=models.CASCADE, verbose_name=_('Child'))
     kinship = models.CharField(_('Degree of kinship'), max_length=20, choices=KINSHIP_TYPE, default=MOTHER)
     liable = models.BooleanField(_('Liable to contribution'), default=False)
+    max_contribution = models.BooleanField(_('Max contribution'), default=False)
     payer = models.BooleanField(_('Payer'), default=False)
 
     class Meta:
@@ -113,13 +114,13 @@ class Income(models.Model):
     SALARY = 'salary'
     INCOME = 'income'
     UNEMPLOYMENT = 'unemployment'
-    MAINTENANCE = 'maintenance'
+    OTHER_PAYMENTS = 'other_payments'
     DEDUCTION = 'deduction'
     INCOME_TYPE = [
         (SALARY, _('Salary')),
         (INCOME, _('Income')),
         (UNEMPLOYMENT, _('Unemployment')),
-        (MAINTENANCE, _('Maintenance')),
+        (OTHER_PAYMENTS, _('Other payments')),
         (DEDUCTION, _('Deduction'))
     ]
     amount = models.IntegerField(_('Amount'))
