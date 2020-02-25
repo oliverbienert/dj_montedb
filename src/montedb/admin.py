@@ -1,3 +1,4 @@
+from constance.admin import ConstanceAdmin, Config
 from django.contrib import admin
 from django.db import models
 from django.db.models import Value
@@ -118,3 +119,15 @@ class ChildAdmin(admin.ModelAdmin):
 
     full_name.short_description = _('Full name')
     full_name.admin_order_field = Concat('first_name', Value(' '), 'last_name')
+
+
+class ConfigAdmin(ConstanceAdmin):
+
+    class Media:
+        js = (
+            "/static/jquery/js/i18n/datepicker-de.js",
+         )
+
+
+admin.site.unregister([Config])
+admin.site.register([Config], ConfigAdmin)
