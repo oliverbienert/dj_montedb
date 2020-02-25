@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-25 10:50+0000\n"
-"PO-Revision-Date: 2020-02-25 11:56+0100\n"
+"POT-Creation-Date: 2020-02-25 21:33+0000\n"
+"PO-Revision-Date: 2020-02-25 22:35+0100\n"
 "Last-Translator: b'Anonymous User <oliver@localhost>'\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -19,67 +19,67 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.3\n"
 "X-Generator: Poedit 2.3\n"
 
-#: accounts/forms.py:13
+#: src/accounts/forms.py:13
 msgid "Remember me"
 msgstr "Anmeldedaten merken"
 
-#: accounts/forms.py:21 accounts/forms.py:38
+#: src/accounts/forms.py:21 src/accounts/forms.py:38
 msgid "Enter Email"
 msgstr "E-Mailadresse eingeben"
 
-#: accounts/forms.py:22 accounts/forms.py:40
+#: src/accounts/forms.py:22 src/accounts/forms.py:40
 msgid "Enter Password"
 msgstr "Passwort eingeben"
 
-#: accounts/forms.py:24
+#: src/accounts/forms.py:24
 msgid "Forgot Password?"
 msgstr "Passwort vergessen?"
 
-#: accounts/forms.py:26
+#: src/accounts/forms.py:26
 msgid "Remember Me"
 msgstr "Anmeldedaten merken"
 
-#: accounts/forms.py:27
+#: src/accounts/forms.py:27
 msgid "Log in"
 msgstr "Anmelden"
 
-#: accounts/forms.py:39
+#: src/accounts/forms.py:39
 msgid "Enter Full Name"
 msgstr "Vollen Namen eintragen"
 
-#: accounts/forms.py:41
+#: src/accounts/forms.py:41
 msgid "Re-enter Password"
 msgstr "Passwort nochmal eingeben"
 
-#: accounts/forms.py:42
+#: src/accounts/forms.py:42
 msgid "Sign up"
 msgstr "Anmelden"
 
-#: accounts/forms.py:52
+#: src/accounts/forms.py:52
 msgid "Enter old password"
 msgstr "Altes Passwort eingeben"
 
-#: accounts/forms.py:53 accounts/forms.py:76
+#: src/accounts/forms.py:53 src/accounts/forms.py:76
 msgid "Enter new password"
 msgstr "Neues Passwort eingeben"
 
-#: accounts/forms.py:54 accounts/forms.py:77
+#: src/accounts/forms.py:54 src/accounts/forms.py:77
 msgid "Enter new password (again)"
 msgstr "Neues Passwort nochmal eingeben"
 
-#: accounts/forms.py:55 accounts/forms.py:78
+#: src/accounts/forms.py:55 src/accounts/forms.py:78
 msgid "Change Password"
 msgstr "Passwort erneuern"
 
-#: accounts/forms.py:65
+#: src/accounts/forms.py:65
 msgid "Enter email"
 msgstr "E-Mailadresse eingeben"
 
-#: accounts/forms.py:66
+#: src/accounts/forms.py:66
 msgid "Reset Password"
 msgstr "Passwort zurücksetzen"
 
-#: accounts/templates/accounts/emails/password-reset-email.html:3
+#: src/accounts/templates/accounts/emails/password-reset-email.html:3
 #, python-format
 msgid ""
 "You're receiving this email because you requested a password reset for your "
@@ -88,50 +88,50 @@ msgstr ""
 "Sie erhalten diese Nachricht, weil Sie für Ihr Benutzerkonto %(site_name)s "
 "ein neues Passwort angefordert haben."
 
-#: accounts/templates/accounts/emails/password-reset-email.html:5
+#: src/accounts/templates/accounts/emails/password-reset-email.html:5
 msgid "Please go to the following page and choose a new password:"
 msgstr "Bitte gehe auf die folgende Seite und wähle ein neues Passwort:"
 
-#: accounts/templates/accounts/emails/password-reset-email.html:9
+#: src/accounts/templates/accounts/emails/password-reset-email.html:9
 msgid "Your login email, in case you've forgotten, is same this email address:"
 msgstr ""
 "Falls Sie es vergessen haben, Ihre Login E-Mail-Addresse ist identisch mit "
 "dieser Addresse:"
 
-#: accounts/templates/accounts/emails/password-reset-email.html:11
+#: src/accounts/templates/accounts/emails/password-reset-email.html:11
 msgid "Thanks for using our site!"
 msgstr "Danke, dass Sie unsere Seite benutzen!"
 
-#: accounts/templates/accounts/emails/password-reset-email.html:13
+#: src/accounts/templates/accounts/emails/password-reset-email.html:13
 #, python-format
 msgid "The %(site_name)s team"
 msgstr "Das %(site_name)s Team"
 
-#: accounts/templates/accounts/login.html:6
+#: src/accounts/templates/accounts/login.html:6
 msgid "Log In"
 msgstr "Anmelden"
 
-#: accounts/templates/accounts/login.html:8
+#: src/accounts/templates/accounts/login.html:8
 msgid "Please Log In"
 msgstr "Bitte melden Sie sich an"
 
-#: accounts/templates/accounts/password-change.html:6
-#: accounts/templates/accounts/password-change.html:8
-#: accounts/templates/accounts/password-reset-confirm.html:6
-#: accounts/templates/accounts/password-reset-confirm.html:8
-#: templates/base.html:68
+#: src/accounts/templates/accounts/password-change.html:6
+#: src/accounts/templates/accounts/password-change.html:8
+#: src/accounts/templates/accounts/password-reset-confirm.html:6
+#: src/accounts/templates/accounts/password-reset-confirm.html:8
+#: src/templates/base.html:68
 msgid "Password Change"
 msgstr "Passwort erneuern"
 
-#: accounts/templates/accounts/password-reset-done.html:6
+#: src/accounts/templates/accounts/password-reset-done.html:6
 msgid "Password Reset Done"
 msgstr "Passwort erneuert"
 
-#: accounts/templates/accounts/password-reset-done.html:8
+#: src/accounts/templates/accounts/password-reset-done.html:8
 msgid "Password Reset Email Sent"
 msgstr "Die Nachricht zum Zurücksetzen des Passwortes wurde verschickt"
 
-#: accounts/templates/accounts/password-reset-done.html:13
+#: src/accounts/templates/accounts/password-reset-done.html:13
 msgid ""
 "Please check your mail. You would have received a password reset mail from "
 "us."
@@ -139,300 +139,305 @@ msgstr ""
 "Bitte kontrollieren Sie Ihren Posteingang. Sie sollten eine Nachricht für "
 "das Zurücksetzen Ihres Passwortes erhalten haben."
 
-#: accounts/templates/accounts/password-reset.html:6
-#: accounts/templates/accounts/password-reset.html:8
+#: src/accounts/templates/accounts/password-reset.html:6
+#: src/accounts/templates/accounts/password-reset.html:8
 msgid "Password Reset"
 msgstr "Passwort erneuern"
 
-#: config/settings/base.py:139
+#: src/config/settings/base.py:132
 msgid "English"
 msgstr "Englisch"
 
-#: config/settings/base.py:140
+#: src/config/settings/base.py:133
 msgid "German"
 msgstr "Deutsch"
 
-#: montedb/admin.py:65 montedb/admin.py:119
+#: src/config/settings/base.py:171
+msgid "Due day for first day at school"
+msgstr "Stichtag für die Einschulung"
+
+#: src/montedb/admin.py:65 src/montedb/admin.py:119
 msgid "Full name"
 msgstr "Name"
 
-#: montedb/admin.py:72 montedb/models.py:149 montedb/models.py:173
+#: src/montedb/admin.py:72 src/montedb/models.py:149 src/montedb/models.py:173
 msgid "Private"
 msgstr "Privat"
 
-#: montedb/admin.py:78 montedb/models.py:150 montedb/models.py:174
+#: src/montedb/admin.py:78 src/montedb/models.py:150 src/montedb/models.py:174
 msgid "Work"
 msgstr "Dienstlich"
 
-#: montedb/admin.py:84 montedb/models.py:151
+#: src/montedb/admin.py:84 src/montedb/models.py:151
 msgid "Mobile"
 msgstr "Mobil"
 
-#: montedb/admin.py:90
+#: src/montedb/admin.py:90
 msgid "E-Mail (Private)"
 msgstr "E-Mail (Privat)"
 
-#: montedb/admin.py:96
+#: src/montedb/admin.py:96
 msgid "E-Mail (Work)"
 msgstr "E-Mail (Dienstlich)"
 
-#: montedb/models.py:11
+#: src/montedb/models.py:11
 msgid "Street"
 msgstr "Straße"
 
-#: montedb/models.py:12
+#: src/montedb/models.py:12
 msgid "House number"
 msgstr "Hausnummer"
 
-#: montedb/models.py:13
+#: src/montedb/models.py:13
 msgid "ZIP code"
 msgstr "PLZ"
 
-#: montedb/models.py:14
+#: src/montedb/models.py:14
 msgid "City"
 msgstr "Ort"
 
-#: montedb/models.py:17 montedb/models.py:59
+#: src/montedb/models.py:17 src/montedb/models.py:59
 msgid "Address"
 msgstr "Adresse"
 
-#: montedb/models.py:18
+#: src/montedb/models.py:18
 msgid "Addresses"
 msgstr "Adressen"
 
-#: montedb/models.py:25
+#: src/montedb/models.py:25
 msgid "Last name"
 msgstr "Nachname"
 
-#: montedb/models.py:26
+#: src/montedb/models.py:26
 msgid "First name"
 msgstr "Vorname"
 
-#: montedb/models.py:27
+#: src/montedb/models.py:27
 msgid "Birth date"
 msgstr "Geburtstag"
 
-#: montedb/models.py:34
+#: src/montedb/models.py:34
 msgid "Birth place"
 msgstr "Geburtsort"
 
-#: montedb/models.py:35
+#: src/montedb/models.py:35
 msgid "Care time"
 msgstr "Betreuungszeit"
 
-#: montedb/models.py:36
+#: src/montedb/models.py:36
 msgid "Day-care centre"
 msgstr "Kita"
 
-#: montedb/models.py:39 montedb/models.py:101 montedb/models.py:213
+#: src/montedb/models.py:39 src/montedb/models.py:101 src/montedb/models.py:213
 msgid "Child"
 msgstr "Kind"
 
-#: montedb/models.py:40 montedb/models.py:61
-#: montedb/templates/montedb/child_list.html:7
-#: montedb/templates/montedb/child_list.html:10 templates/home.html:51
+#: src/montedb/models.py:40 src/montedb/models.py:61
+#: src/montedb/templates/montedb/child_list.html:7
+#: src/montedb/templates/montedb/child_list.html:10 src/templates/home.html:51
 msgid "Children"
 msgstr "Kinder"
 
-#: montedb/models.py:50
+#: src/montedb/models.py:50
 msgid "Age"
 msgstr "Alter"
 
-#: montedb/models.py:58
+#: src/montedb/models.py:58
 msgid "Partner"
 msgstr "Partner"
 
-#: montedb/models.py:62
+#: src/montedb/models.py:62
 msgid "Club member"
 msgstr "Vereinsmitglied"
 
-#: montedb/models.py:63
+#: src/montedb/models.py:63
 msgid "Staff"
 msgstr "Mitarbeiter"
 
-#: montedb/models.py:64
+#: src/montedb/models.py:64
 msgid "Household size"
 msgstr "Kindergeldberechtigte Kinder im Haushalt"
 
-#: montedb/models.py:68 montedb/models.py:100 montedb/models.py:133
-#: montedb/models.py:161 montedb/models.py:183
+#: src/montedb/models.py:68 src/montedb/models.py:100 src/montedb/models.py:133
+#: src/montedb/models.py:161 src/montedb/models.py:183
 msgid "Adult"
 msgstr "Erwachsene"
 
-#: montedb/models.py:69 montedb/templates/montedb/adult_list.html:8
-#: montedb/templates/montedb/adult_list.html:11 templates/home.html:56
+#: src/montedb/models.py:69 src/montedb/templates/montedb/adult_list.html:8
+#: src/montedb/templates/montedb/adult_list.html:11 src/templates/home.html:56
 msgid "Adults"
 msgstr "Erwachsene"
 
-#: montedb/models.py:94
+#: src/montedb/models.py:94
 msgid "Mother"
 msgstr "Mutter"
 
-#: montedb/models.py:95
+#: src/montedb/models.py:95
 msgid "Father"
 msgstr "Vater"
 
-#: montedb/models.py:96
+#: src/montedb/models.py:96
 msgid "Grandmother"
 msgstr "Großmutter"
 
-#: montedb/models.py:97
+#: src/montedb/models.py:97
 msgid "Grandfather"
 msgstr "Großvater"
 
-#: montedb/models.py:98
+#: src/montedb/models.py:98
 msgid "Other"
 msgstr "Andere"
 
-#: montedb/models.py:102 montedb/models.py:108
+#: src/montedb/models.py:102 src/montedb/models.py:108
 msgid "Degree of kinship"
 msgstr "Verwandschaftsgrad"
 
-#: montedb/models.py:103
+#: src/montedb/models.py:103
 msgid "Liable to contribution"
 msgstr "Elternbeitragspflichtig"
 
-#: montedb/models.py:104
+#: src/montedb/models.py:104
 msgid "Max contribution"
 msgstr "Höchstbeitrag"
 
-#: montedb/models.py:105
+#: src/montedb/models.py:105
 msgid "Payer"
 msgstr "Zahler"
 
-#: montedb/models.py:109
+#: src/montedb/models.py:109
 msgid "Degrees of kinship"
 msgstr "Verwandschaftsgrade"
 
-#: montedb/models.py:120
+#: src/montedb/models.py:120
 msgid "Salary"
 msgstr "Nicht selbstständig"
 
-#: montedb/models.py:121 montedb/models.py:136
+#: src/montedb/models.py:121 src/montedb/models.py:136
 msgid "Income"
 msgstr "Selbstständig"
 
-#: montedb/models.py:122
+#: src/montedb/models.py:122
 msgid "Unemployment"
 msgstr "Ersatzleistungen"
 
-#: montedb/models.py:123
+#: src/montedb/models.py:123
 msgid "Other payments"
 msgstr "Sonstige Einnahmen"
 
-#: montedb/models.py:124
+#: src/montedb/models.py:124
 msgid "Deduction"
 msgstr "Abzug"
 
-#: montedb/models.py:126
+#: src/montedb/models.py:126
 msgid "Amount"
 msgstr "Betrag"
 
-#: montedb/models.py:128 montedb/models.py:156 montedb/models.py:178
+#: src/montedb/models.py:128 src/montedb/models.py:156
+#: src/montedb/models.py:178
 msgid "Type"
 msgstr "Art"
 
-#: montedb/models.py:137
+#: src/montedb/models.py:137
 msgid "Incomes"
 msgstr "Einkommen"
 
-#: montedb/models.py:152
+#: src/montedb/models.py:152
 msgid "Fax"
 msgstr "Fax"
 
-#: montedb/models.py:154 montedb/models.py:164
+#: src/montedb/models.py:154 src/montedb/models.py:164
 msgid "Phone number"
 msgstr "Telefonnummer"
 
-#: montedb/models.py:165
+#: src/montedb/models.py:165
 msgid "Phone numbers"
 msgstr "Telefonnummern"
 
-#: montedb/models.py:176 montedb/models.py:186
+#: src/montedb/models.py:176 src/montedb/models.py:186
 msgid "E-Mail address"
 msgstr "E-Mailadresse"
 
-#: montedb/models.py:187
+#: src/montedb/models.py:187
 msgid "E-Mail addresses"
 msgstr "E-Mailadressen"
 
-#: montedb/models.py:198
+#: src/montedb/models.py:198
 msgid "Extended day time"
 msgstr "Erweiterte Betreuungszeit"
 
-#: montedb/models.py:199
+#: src/montedb/models.py:199
 msgid "Extended care time"
 msgstr "Verlängerte Betreuungszeit"
 
-#: montedb/models.py:200
+#: src/montedb/models.py:200
 msgid "Right to request and vote (available care service)"
 msgstr "Wunsch- und Wahlrecht"
 
-#: montedb/models.py:201
+#: src/montedb/models.py:201
 msgid "Fee payment by county"
 msgstr "Übernahme von Gebühren durch Landkreis"
 
-#: montedb/models.py:202
+#: src/montedb/models.py:202
 msgid "Lunch payment by county"
 msgstr "Übernahme von Essenkosten durch Landkreis"
 
-#: montedb/models.py:206
+#: src/montedb/models.py:206
 msgid "Ruling type"
 msgstr "Anträge und Bescheide"
 
-#: montedb/models.py:210
+#: src/montedb/models.py:210
 msgid "Valid from"
 msgstr "Gültig ab"
 
-#: montedb/models.py:211
+#: src/montedb/models.py:211
 msgid "Valid to"
 msgstr "Gültig bis"
 
-#: montedb/models.py:216
+#: src/montedb/models.py:216
 msgid "Ruling"
 msgstr "Antrag/Bescheid"
 
-#: montedb/models.py:217
+#: src/montedb/models.py:217
 msgid "Rulings"
 msgstr "Anträge und Bescheide"
 
-#: templates/base.html:67
+#: src/templates/base.html:67
 msgid "Logout"
 msgstr "Abmelden"
 
-#: templates/base.html:72
+#: src/templates/base.html:72
 msgid "Log in "
 msgstr "Anmelden "
 
-#: templates/home.html:20
+#: src/templates/home.html:20
 msgid "Fees, Notifications, Authorities & Co."
 msgstr "Beiträge, Bescheide, Behörden und Co."
 
-#: templates/home.html:21
+#: src/templates/home.html:21
 msgid "Image by"
 msgstr "Bild von"
 
-#: templates/home.html:23
+#: src/templates/home.html:23
 msgid "at"
 msgstr "auf"
 
-#: templates/home.html:46 templates/home.html:74
+#: src/templates/home.html:46 src/templates/home.html:74
 msgid "Dashboard"
 msgstr "Übersicht"
 
-#: templates/home.html:62
+#: src/templates/home.html:62
 msgid "Saved reports"
 msgstr "Gespeicherte Berichte"
 
-#: templates/home.html:77
+#: src/templates/home.html:77
 msgid "Share"
 msgstr "Teilen"
 
-#: templates/home.html:78
+#: src/templates/home.html:78
 msgid "Export"
 msgstr "Exportieren"
 
-#: templates/home.html:82
+#: src/templates/home.html:82
 msgid "This week"
 msgstr "Diese Woche"
 
