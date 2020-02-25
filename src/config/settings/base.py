@@ -66,6 +66,8 @@ ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(',')
 # Application definition
 
 INSTALLED_APPS = (
+    "constance",
+    "constance.backends.database",
     "django.contrib.auth",
     "grappelli",
     "django.contrib.admin",
@@ -80,6 +82,15 @@ INSTALLED_APPS = (
     "accounts",
     "montedb",
 )
+
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+
+CONSTANCE_DATABASE_PREFIX = 'constance:montedbp:'
+
+CONSTANCE_CONFIG = {
+    'THE_ANSWER': ("42", 'Answer to the Ultimate Question of Life, '
+                       'The Universe, and Everything', str),
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
