@@ -24,7 +24,7 @@ class Address(models.Model):
 class Person(models.Model):
     last_name = models.CharField(_('Last name'), max_length=255)
     first_name = models.CharField(_('First name'), max_length=255)
-    birth_date = models.DateField(_('Birth date'), default=datetime.date.today)
+    birth_date = models.DateField(_('Birth date'), null=True, blank=True)
 
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)

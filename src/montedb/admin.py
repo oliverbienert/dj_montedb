@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db import models
 from django.db.models import Value
 from django.db.models.functions import Concat
 from django.utils.translation import ugettext_lazy as _
@@ -97,6 +98,10 @@ class AdultAdmin(admin.ModelAdmin):
 
 @admin.register(Child)
 class ChildAdmin(admin.ModelAdmin):
+
+    formfield_overrides = {
+        models.DateField: {'required': True}
+    }
 
     list_display = ('full_name', 'care_time', 'age')
 
