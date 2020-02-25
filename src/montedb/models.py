@@ -54,7 +54,7 @@ class Child(Person):
 
 
 class Adult(Person):
-    iban = models.CharField('IBAN', max_length=32)
+    iban = models.CharField('IBAN', max_length=32, blank=True)
     partner = models.OneToOneField('self', verbose_name=_('Partner'), on_delete=models.SET_NULL, blank=True, null=True)
     address = models.ForeignKey(Address, verbose_name=_('Address'), related_name='adults', on_delete=models.SET_NULL,
                                 blank=True, null=True)
