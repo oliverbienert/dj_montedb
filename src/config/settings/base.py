@@ -7,9 +7,11 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
+from datetime import date, datetime, timezone
 
 from django.urls import reverse_lazy
 from pathlib import Path
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / "directory"
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -66,10 +68,10 @@ ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(',')
 # Application definition
 
 INSTALLED_APPS = (
-    "constance",
-    "constance.backends.database",
     "django.contrib.auth",
     "grappelli",
+    "constance",
+    "constance.backends.database",
     "django.contrib.admin",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -82,15 +84,6 @@ INSTALLED_APPS = (
     "accounts",
     "montedb",
 )
-
-CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
-
-CONSTANCE_DATABASE_PREFIX = 'constance:montedbp:'
-
-CONSTANCE_CONFIG = {
-    'THE_ANSWER': ("42", 'Answer to the Ultimate Question of Life, '
-                       'The Universe, and Everything', str),
-}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -169,4 +162,13 @@ DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 # Phone numbers
 PHONENUMBER_DEFAULT_REGION = 'DE'
 PHONENUMBER_DB_FORMAT = 'E164'
+
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+
+CONSTANCE_DATABASE_PREFIX = 'constance:montedbp:'
+
+CONSTANCE_CONFIG = {
+    'SCHOOL_ENROLMENT_DUE_DAY': (date(datetime.now(tz=timezone.utc).date().year,9,30), _('Due day for first day at school')),
+}
+
 
