@@ -14,7 +14,7 @@ django-constance[database]==2.6.0
 django-crispy-forms==1.7.2
 django-debug-toolbar==2.2
 django-environ==0.4.5
-django-grappelli==2.14.1
+django-grappelli==2.13.4
 django-phonenumber-field==4.0.0
 django-picklefield==2.1.1  # via django-constance
 django-tables2==2.2.1
@@ -25,11 +25,11 @@ pipdeptree==0.13.2
 psycopg2==2.8.4
 pycparser==2.19           # via cffi
 pytz==2019.3              # via babel, django
-six==1.13.0               # via argon2-cffi, django-braces, django-grappelli, pip-tools
+six==1.13.0               # via argon2-cffi, django-braces, pip-tools
 sqlparse==0.3.0           # via django, django-debug-toolbar
 werkzeug==0.16
 wheel==0.33.6
 
 # The following packages are considered to be unsafe in a requirements file:
-# pip
-# setuptools
+# pip==20.0.2               # via pipdeptree
+# setuptools==41.4.0
