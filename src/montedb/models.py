@@ -232,11 +232,11 @@ class ParentalContribution(models.Model):
         (NURSERY_LE_30H_FEE, _('Nursery (up to 30 hours)')),
         (NURSERY_GT_30H_FEE, _('Nursery (more than 30 hours)'))
     ]
-    income = models.IntegerField(_('Income'))
     type = models.CharField(
         _('Contribution type'),
         max_length=10,
         choices=CONTRIBUTION_TYPE,
     )
+    income = models.IntegerField(_('Income'))
     children = models.SmallIntegerField(_('Number of children'))
     contribution = models.SmallIntegerField(_('Contribution'))
