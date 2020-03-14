@@ -216,3 +216,27 @@ class Ruling(models.Model):
         verbose_name = _('Ruling')
         verbose_name_plural = _('Rulings')
 
+
+class ParentalContribution(models.Model):
+    SCHOOL_FEE = 'school_fee'
+    AFTER_SCHOOL_FEE = "after_school_fee"
+    KINDERGARTEN_LE_30H_FEE = 'kindergarten_le_30h_fee'
+    KINDERGARTEN_GT_30H_FEE = 'kindergarten_gt_30h_fee'
+    NURSERY_LE_30H_FEE = 'nursery_le_30h_fee'
+    NURSERY_GT_30H_FEE = 'nursery_gt_30h_fee'
+    CONTRIBUTION_TYPE = [
+        (SCHOOL_FEE, _('School fee')),
+        (AFTER_SCHOOL_FEE, _('After school fee')),
+        (KINDERGARTEN_LE_30H_FEE, _('Kindergarten (up to 30 hours)')),
+        (KINDERGARTEN_GT_30H_FEE, _('Kindergarten (more than 30 hours)')),
+        (NURSERY_LE_30H_FEE, _('Nursery (up to 30 hours)')),
+        (NURSERY_GT_30H_FEE, _('Nursery (more than 30 hours)'))
+    ]
+    income = models.IntegerField(_('Income'))
+    type = models.CharField(
+        _('Contribution type'),
+        max_length=10,
+        choices=CONTRIBUTION_TYPE,
+    )
+    children = models.SmallIntegerField(_('Number of children'))
+    contribution = models.SmallIntegerField(_('Contribution'))
