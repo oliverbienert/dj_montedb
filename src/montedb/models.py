@@ -240,3 +240,12 @@ class ParentalContribution(models.Model):
     income = models.IntegerField(_('Income'))
     children = models.SmallIntegerField(_('Number of children'))
     contribution = models.SmallIntegerField(_('Contribution'))
+
+    class Meta:
+        verbose_name = _('Parental Contribution')
+        verbose_name_plural = _('Parental Contributions')
+        unique_together = ('type', 'income', 'children')
+
+    def __str__(self):
+        return "[Type: {}] Income: {}, Children: {}, Contribution: {}" \
+            .format(self.type, self.income, self.children, self.contribution)
