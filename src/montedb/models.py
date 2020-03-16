@@ -234,7 +234,7 @@ class ParentalContribution(models.Model):
     ]
     type = models.CharField(
         _('Contribution type'),
-        max_length=10,
+        max_length=25,
         choices=CONTRIBUTION_TYPE,
     )
     income = models.IntegerField(_('Income'))
