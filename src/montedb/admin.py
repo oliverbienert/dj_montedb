@@ -6,7 +6,7 @@ from django.db.models.functions import Concat
 from django.utils.translation import ugettext_lazy as _
 
 
-from .models import Adult, Child, Income, Address, PhoneNumber, EmailAddress, AdultChild, Ruling, ParentalContribution
+from .models import Adult, Child, Income, Address, PhoneNumber, EmailAddress, AdultChild, Ruling
 
 
 class MonteDbTabularInline(admin.TabularInline):
@@ -119,19 +119,6 @@ class ChildAdmin(admin.ModelAdmin):
 
     full_name.short_description = _('Full name')
     full_name.admin_order_field = Concat('first_name', Value(' '), 'last_name')
-
-
-@admin.register(ParentalContribution)
-class ParentalContributionAdmin(admin.ModelAdmin):
-
-    list_display = ('type', 'income', 'children', 'contribution')
-
-    def full_name(self, obj):
-        return "[Type: %s] Income: %s, Number of children: %s -> Contribution: %s" \
-               % (obj.income, obj.type, obj.children, obj.contribution)
-
-    full_name.short_description = _('Contribution entry')
-    full_name.admin_order_field = Concat('type', Value(' '), 'income', Value(' '), 'children')
 
 
 class ConfigAdmin(ConstanceAdmin):
