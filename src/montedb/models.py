@@ -58,7 +58,7 @@ class Adult(Person):
     partner = models.OneToOneField('self', verbose_name=_('Partner'), on_delete=models.SET_NULL, blank=True, null=True)
     address = models.ForeignKey(Address, verbose_name=_('Address'), related_name='adults', on_delete=models.SET_NULL,
                                 blank=True, null=True)
-    children = models.ManyToManyField(Child, through='AdultChild', verbose_name=_('Children'))
+    children = models.ManyToManyField(Child, through='AdultChild', verbose_name=_('Children'), related_name='adults')
     club_member = models.BooleanField(_('Club member'), default=False)
     staff = models.BooleanField(_('Staff'), default=False)
     household_size = models.IntegerField(_('Household size'), null=True, blank=True,
@@ -130,7 +130,7 @@ class Income(models.Model):
         choices=INCOME_TYPE,
         default=SALARY
     )
-    adult = models.ForeignKey(Adult, models.CASCADE, verbose_name=_('Adult'))
+    adult = models.ForeignKey(Adult, models.CASCADE, verbose_name=_('Adult'), related_name='income')
 
     class Meta:
         verbose_name = _('Income')
