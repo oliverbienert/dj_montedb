@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+
+{% block navbar %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <div>
+    <ul>
+    {% for child in children %}
+        <li>{{ child }}</li>
+    {% endfor %}
+    </ul>
+    </div>
+
+{% endblock main %}
