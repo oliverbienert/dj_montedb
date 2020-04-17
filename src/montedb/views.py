@@ -38,5 +38,5 @@ class ParentFeeView(TemplateView):
 
         fee = Fee()
 
-        context['children'] = [fee.get_total_income(get_adults(adult))]
+        context['children'] = fee.calc(adult)
         return context

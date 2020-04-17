@@ -1,4 +1,4 @@
-from .models import Adult, Income
+from .models import Adult, Income, ParentalContribution
 
 
 def get_adults(adult):
@@ -27,7 +27,7 @@ class Fee:
         self.children = get_children(adult)
         self.calc_total_income()
         self.calc_reduction2()
-        self.calc_fee()
+        return self.calc_fee()
 
     def calc_total_income(self):
         for adult in self.adults:
@@ -39,18 +39,34 @@ class Fee:
 
     def calc_reduction2(self):
         total = len(self.adults) + len(self.children)
-        household_size = max(adult.household_size for adult in self.adults)
+        household_size = 0
+        for adult in self.adults:
+            size = adult.household_size
+            try:
+                household_size = max(household_size, size)
+            except (ValueError, TypeError):
+                pass
         if total < household_size:
             add_household_members = household_size - total
             self.reduction2 = add_household_members * 0.05
 
     def calc_fee(self):
         reduction1 = 0
+        result = dict()
         for child in self.children:
             income = self.total_income
-        # 20 % reduction for each further child
-        income *= 1 - reduction1
-        reduction1 += 0.2
-        # Apply reduction2 (5% reduction per additional household member not in school)
-        income *= 1 - self.reduction2
+            # 20 % reduction for each further child
+            income *= 1 - reduction1
+            reduction1 += 0.2
+            # Apply reduction2 (5% reduction per additional household member not in school)
+            income *= 1 - self.reduction2
+
+            contribution = ParentalContribution.objects.order_by('income').filter(
+                income__lte=income,
+                type=ParentalContribution.SCHOOL_FEE,
+                children=len(self.children))[0]
+
+            result[child] = contribution.contribution
+
+        return result
 
