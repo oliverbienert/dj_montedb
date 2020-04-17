@@ -6,11 +6,16 @@
 
 {% block main %}
     <div>
-    <ul>
-    {% for child in children %}
-        <li>{{ child }}</li>
-    {% endfor %}
-    </ul>
+    <table style="border-width:0;">
+        <tbody>
+        {% for child, fee in children.items %}
+            <tr style="font-weight: bold">
+                <td>{{ child }}</td>
+                <td>{{ fee }} €</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     </div>
 
 {% endblock main %}
