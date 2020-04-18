@@ -61,7 +61,7 @@ class Fee:
             # Apply reduction2 (5% reduction per additional household member not in school)
             income *= 1 - self.reduction2
 
-            contribution = ParentalContribution.objects.order_by('income').filter(
+            contribution = ParentalContribution.objects.order_by('-income').filter(
                 income__lte=income,
                 type=ParentalContribution.SCHOOL_FEE,
                 children=len(self.children))[0]
