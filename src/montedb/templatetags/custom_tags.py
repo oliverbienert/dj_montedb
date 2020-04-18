@@ -12,6 +12,6 @@ def percentage(value):
 
 @register.filter
 def euro(value):
-    if value == 0:
+    if value is None or value == 0 or value == "0" or value == '':
         return ""
     return format(value, ".2f").strip("0").strip(".") + " €"
