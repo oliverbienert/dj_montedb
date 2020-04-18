@@ -1,5 +1,7 @@
 {% extends "home.html" %}
 
+{% load custom_tags %}
+
 {% block navbar %}
     {{ block.super }}
 {% endblock %}
@@ -25,10 +27,10 @@
     <p>Gemäß § 17 des Kindertagesstättengesetzes (KitaG Land Brandenburg) vom 27.06.2004  und der von der Mitgliederversammlung zuletzt beschlossenen Beitragsordnung wird Ihr monatlicher Beitrag für die Nutzung der Einrichtungen des Freie Montessorischule Barnim e.V. wie folgt festgesetzt:</p>
     <table style="border-width:0;">
         <tbody>
-        {% for child, fee in children.items %}
+        {% for child, childCalculation in children.items %}
             <tr style="font-weight: bold">
                 <td>{{ child }}</td>
-                <td>{{ fee }} €</td>
+                <td>{{ childCalculation.fee|euro }}</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -46,17 +48,17 @@
             <th class="border" style="width:1.5cm;">Berücks. Eink.</th>
             <th class="border" style="width:2cm;">Betrag</th>
         </tr>
-        {% for child, fee in children.items %}
+        {% for child, childCalculation in children.items %}
         <tr>
             <td class="border">{{ child.last_name }}</td>
             <td class="border">{{ child.first_name }}</td>
+            <td class="border" style="text-align:right;">{{ childCalculation.income|euro }}</td>
             <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;">{{ childCalculation.reduction1|percentage }}</td>
+            <td class="border" style="text-align:right;">{{ childCalculation.reduction2|percentage }}</td>
             <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;">{{ fee }} €</td>
+            <td class="border" style="text-align:right;">{{ childCalculation.incomeApplied|euro }}</td>
+            <td class="border" style="text-align:right;">{{ childCalculation.fee|euro }}</td>
         </tr>
         {% endfor %}
     </table>
