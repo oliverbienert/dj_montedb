@@ -53,7 +53,7 @@ class Fee:
     def calc_fee(self):
         reduction1 = 0
         result = dict()
-        for child in self.children:
+        for child in sorted(self.children, key=lambda x: x.birth_date):
             income = self.total_income
             # 20 % reduction for each further child
             income *= 1 - reduction1
