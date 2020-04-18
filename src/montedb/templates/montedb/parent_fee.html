@@ -6,6 +6,23 @@
 
 {% block main %}
     <div>
+    <h2>Elternbeitragsrechnung</h2>
+    <p>
+        Freie Montessorischule Barnim e.V. (FMB e.V.)<br>
+        c/o Vorstand, zuständig: Adrian Bleisch/ Ulf Hoffmann/ Stephan Graupner<br>
+        Friedrich-Engels-Str. 6<br>
+        16225 Eberswalde<br>
+        Tel. 03334-288548
+    </p>
+    <p>Beitragsbescheid, gültig ab: 18.04.2020</p>
+    <h3>Empfänger</h3>
+    <p>
+        Name, Vorname<br>
+        Adresse Zeile 1<br>
+        Adresse Zeile 2
+    </p>
+    <h3>Beiträge</h3>
+    <p>Gemäß § 17 des Kindertagesstättengesetzes (KitaG Land Brandenburg) vom 27.06.2004  und der von der Mitgliederversammlung zuletzt beschlossenen Beitragsordnung wird Ihr monatlicher Beitrag für die Nutzung der Einrichtungen des Freie Montessorischule Barnim e.V. wie folgt festgesetzt:</p>
     <table style="border-width:0;">
         <tbody>
         {% for child, fee in children.items %}
@@ -15,6 +32,58 @@
             </tr>
         {% endfor %}
         </tbody>
+    </table>
+    <h3>Berechnung</h3>
+    <table style="margin-bottom: 0.2cm; width: 17cm; border: black 1px solid; font-size: 10pt;  table-layout: fixed;">
+        <tr>
+            <th class="border" style="width:3cm;">Name</th>
+            <th class="border" style="width:3cm;">Vorname</th>
+            <th class="border" style="width:1.5cm;">Eink.</th>
+            <th class="border" style="width:1.5cm;">Kinder- geld</th>
+            <th class="border" style="width:1.5cm;">Mind. 1</th>
+            <th class="border" style="width:1.5cm;">Mind 2</th>
+            <th class="border" style="width:1.5cm;">Erw. Betr.</th>
+            <th class="border" style="width:1.5cm;">Berücks. Eink.</th>
+            <th class="border" style="width:2cm;">Betrag</th>
+        </tr>
+        {% for child, fee in children.items %}
+        <tr>
+            <td class="border">{{ child.last_name }}</td>
+            <td class="border">{{ child.first_name }}</td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;">{{ fee }} €</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>Einkommen</h3>
+    <table style="margin-bottom: 0.2cm; width: 17cm; border: black 1px solid; font-size: 10pt;  table-layout: fixed;">
+        <tr>
+            <th class="border" style="width:3cm;">Name</th>
+            <th class="border" style="width:3cm;">Vorname</th>
+            <th class="border" style="width:1.5cm;">Nicht selbst.</th>
+            <th class="border" style="width:1.5cm;">Selbst.</th>
+            <th class="border" style="width:1.5cm;">Arbeits- amt</th>
+            <th class="border" style="width:1.5cm;">Unterhalt</th>
+            <th class="border" style="width:1.5cm;">Sonst.</th>
+            <th class="border" style="width:1.5cm;">Abzügl.</th>
+            <th class="border" style="width:2cm;">Gesamt</th>
+        </tr>
+        <tr>
+            <td class="border"></td>
+            <td class="border"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;"></td>
+        </tr>
     </table>
     </div>
 
