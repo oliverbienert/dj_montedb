@@ -1,6 +1,14 @@
 from .models import Adult, Income, ParentalContribution
 
 
+class ChildCalculation:
+    income = None
+    reduction1 = None
+    reduction2 = None
+    incomeApplied = None
+    fee = None
+
+
 def get_adults(adult):
     adults = set()
     for child in adult.children.all():
@@ -54,9 +62,14 @@ class Fee:
         reduction1 = 0
         result = dict()
         for child in sorted(self.children, key=lambda x: x.birth_date):
+            child_calculation = ChildCalculation()
+            child_calculation.income = self.total_income
+            child_calculation.reduction2 = self.reduction2
+
             income = self.total_income
             # 20 % reduction for each further child
             income *= 1 - reduction1
+            child_calculation.reduction1 = reduction1
             reduction1 += 0.2
             # Apply reduction2 (5% reduction per additional household member not in school)
             income *= 1 - self.reduction2
@@ -66,7 +79,9 @@ class Fee:
                 type=ParentalContribution.SCHOOL_FEE,
                 children=len(self.children))[0]
 
-            result[child] = contribution.contribution
+            child_calculation.incomeApplied = income
+            child_calculation.fee = contribution.contribution
+
+            result[child] = child_calculation
 
         return result
-
