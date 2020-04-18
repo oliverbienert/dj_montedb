@@ -36,7 +36,8 @@ class ParentFeeView(TemplateView):
         adult = Adult.objects.get(pk=kwargs['pk'])
         context = super(ParentFeeView, self).get_context_data(**kwargs)
 
-        fee = Fee()
-
-        context['children'] = fee.calc(adult)
+        fee = Fee(adult)
+        context['payer'] = fee.payer
+        context['adults'] = fee.adult_calculations
+        context['children'] = fee.children_calculations
         return context

@@ -19,9 +19,11 @@
     <p>Beitragsbescheid, gültig ab: 18.04.2020</p>
     <h3>Empfänger</h3>
     <p>
-        Name, Vorname<br>
-        Adresse Zeile 1<br>
-        Adresse Zeile 2
+        {{ payer.last_name }}, {{ payer.first_name }}<br>
+        {% with payer.address as address %}
+        {{ address.street }} {{ address.house_number }}<br>
+        {{ address.zip_code}} {{ address.city }}
+        {% endwith %}
     </p>
     <h3>Beiträge</h3>
     <p>Gemäß § 17 des Kindertagesstättengesetzes (KitaG Land Brandenburg) vom 27.06.2004  und der von der Mitgliederversammlung zuletzt beschlossenen Beitragsordnung wird Ihr monatlicher Beitrag für die Nutzung der Einrichtungen des Freie Montessorischule Barnim e.V. wie folgt festgesetzt:</p>
@@ -75,18 +77,26 @@
             <th class="border" style="width:1.5cm;">Abzügl.</th>
             <th class="border" style="width:2cm;">Gesamt</th>
         </tr>
+        {% for adult, adultCalculation in adults.items %}
         <tr>
-            <td class="border"></td>
-            <td class="border"></td>
+            <td class="border">{{ adult.last_name }}</td>
+            <td class="border">{{ adult.first_name }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.salary|euro }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.income|euro }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.unemployment|euro }}</td>
             <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
-            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.other_payments|euro }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.deduction|euro }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.total_income|euro }}</td>
         </tr>
+        {% endfor %}
     </table>
+    <h3>Bemerkungen</h3>
+    <p></p>
+    <p>Die Elternbeiträge werden zum 15. des Monats eingezogen.</p>
+    <p>Für eventuell erforderlich werdende Mahnungen werden jeweils 5,- € Gebühren erhoben.<br>Veränderungen des Gesamteinkommens von mehr als 5 % müssen dem Vorstand unter Vorlage entsprechender Bescheide zur Kenntnis gegeben werden.</p>
+    <p>Dieser Beitragsbescheid ersetzt alle früheren Bescheide.</p>
+    <p>Eberswalde, den 18.04.2020</p>
     </div>
 
 {% endblock main %}
