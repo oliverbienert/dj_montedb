@@ -219,7 +219,7 @@ class Ruling(models.Model):
 
 class ParentalContribution(models.Model):
     SCHOOL_FEE = 'school_fee'
-    AFTER_SCHOOL_FEE = "after_school_fee"
+    AFTER_SCHOOL_FEE = 'after_school_fee'
     KINDERGARTEN_LE_30H_FEE = 'kindergarten_le_30h_fee'
     KINDERGARTEN_GT_30H_FEE = 'kindergarten_gt_30h_fee'
     NURSERY_LE_30H_FEE = 'nursery_le_30h_fee'
