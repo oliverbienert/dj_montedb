@@ -1,4 +1,4 @@
-from .models import Adult, Income, ParentalContribution
+from .models import Income, ParentalContribution
 
 
 class ChildCalculation:
@@ -37,14 +37,15 @@ class AdultCalculation:
 def get_adults(adult):
     adults = set()
     for child in adult.children.all():
-        for related_adult in child.adults.all():
+        # Only adults that have been marked as liable to pay for that child
+        for related_adult in child.adults.filter(adultchild__liable=True):
             adults.add(related_adult)
     return adults
 
 
 def get_children(adult):
     children = set()
-    for child in adult.children.all():
+    for child in adult.children.filter(adultchild__liable=True):
         children.add(child)
     return children
 
@@ -68,7 +69,7 @@ class Fee:
 
     def calc_total_income(self):
         for adult in self.adults:
-            # TODO Should be choosen based on payer flag as soon as it is introduced
+            # TODO Should be chosen based on payer flag as soon as it is introduced
             self.payer = adult
             adult_calculation = AdultCalculation()
             adult_total_income = 0
