@@ -10,19 +10,18 @@ from ...models import ParentalContribution
 class Command(BaseCommand):
     help = "Reads in all .csv-Files matching the format in config/parental_contribution as a parental contribution " \
            "table. "
-    directory = "config/parental_contribution"
+    directory = "config/parental_contribution/"
 
     def handle(self, *args, **options):
         income_header = 'income'
         fee_types = [item[0] for item in ParentalContribution.CONTRIBUTION_TYPE]
-        for filename in os.scandir(self.directory):
-            if not filename.path.endswith(".csv"):
-                continue
-            with open(filename) as file:
-                fee_type = next(file)
-                if fee_type.rstrip() not in fee_types:
-                    print("Contribution type {} in file {} is not valid.".format(fee_type, filename))
-                    continue
+        for fee_type in fee_types:
+            filename = self.directory + fee_type + ".csv"
+            try:
+                file = open(filename)
+            except FileNotFoundError:
+                print("No configuration could be found for file {}.".format(filename))
+            else:
                 reader = csv.DictReader(file, delimiter=',')
                 fieldnames = reader.fieldnames
                 # Checking if the file specifies the right header, consisting of:
