@@ -4,32 +4,32 @@
 #
 #    pip-compile
 #
-argon2-cffi==19.1.0
+argon2-cffi==19.1.0       # via -r requirements.in
 babel==2.8.0              # via django-phonenumber-field
 cffi==1.13.2              # via argon2-cffi
 click==7.0                # via pip-tools
-django-authtools==1.7.0
-django-braces==1.14.0
-django-constance[database]==2.6.0
-django-crispy-forms==1.7.2
-django-debug-toolbar==2.2
-django-environ==0.4.5
-django-grappelli==2.13.4
-django-phonenumber-field==4.0.0
+django-authtools==1.7.0   # via -r requirements.in
+django-braces==1.14.0     # via -r requirements.in
+django-constance[database]==2.6.0  # via -r requirements.in
+django-crispy-forms==1.7.2  # via -r requirements.in
+django-debug-toolbar==2.2  # via -r requirements.in
+django-environ==0.4.5     # via -r requirements.in
+django-grappelli==2.13.4  # via -r requirements.in
+django-phonenumber-field==4.0.0  # via -r requirements.in
 django-picklefield==2.1.1  # via django-constance
-django-tables2==2.2.1
-django==2.2.10
-phonenumbers==8.11.2
-pip-tools==4.2.0
-pipdeptree==0.13.2
-psycopg2==2.8.4
+django-tables2==2.2.1     # via -r requirements.in
+django==2.2.13            # via -r requirements.in, django-authtools, django-braces, django-debug-toolbar, django-phonenumber-field, django-picklefield, django-tables2
+phonenumbers==8.11.2      # via -r requirements.in
+pip-tools==4.2.0          # via -r requirements.in
+pipdeptree==0.13.2        # via -r requirements.in
+psycopg2==2.8.4           # via -r requirements.in
 pycparser==2.19           # via cffi
 pytz==2019.3              # via babel, django
 six==1.13.0               # via argon2-cffi, django-braces, pip-tools
 sqlparse==0.3.0           # via django, django-debug-toolbar
-werkzeug==0.16
-wheel==0.33.6
+werkzeug==0.16            # via -r requirements.in
+wheel==0.33.6             # via -r requirements.in
 
 # The following packages are considered to be unsafe in a requirements file:
-# pip==20.0.2               # via pipdeptree
-# setuptools==41.4.0
+# pip
+# setuptools
