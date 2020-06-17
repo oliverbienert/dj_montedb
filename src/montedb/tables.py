@@ -1,4 +1,4 @@
-from django_tables2 import tables
+from django_tables2 import tables, TemplateColumn
 
 from .models import Adult, Child
 
@@ -23,3 +23,4 @@ class AdultTable(tables.Table):
         sequence = ('first_name', 'last_name', 'birth_date', 'iban', '...')
         attrs = attrs
 
+    buttons = TemplateColumn(template_name="montedb/parent_contribution_button.html", orderable=False, verbose_name="")
