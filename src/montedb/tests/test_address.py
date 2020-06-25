@@ -1,6 +1,6 @@
 import pytest
 
-from .factories import AddressFactory
+from config.tests.factories import AddressFactory
 
 
 class TestAddress:

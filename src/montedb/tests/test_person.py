@@ -1,7 +1,7 @@
 import datetime
 import pytest
 
-from .factories import PersonFactory
+from config.tests.factories import PersonFactory
 
 
 class TestPerson:
