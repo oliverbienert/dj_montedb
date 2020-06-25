@@ -1,5 +1,5 @@
 import factory
-from ..models import Address, Person
+from montedb.models import Address, Person
 
 
 class AddressFactory(factory.DjangoModelFactory):
