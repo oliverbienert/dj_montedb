@@ -15,7 +15,7 @@ pipdeptree==0.13.2
 phonenumbers
 psycopg2
 pytest-django
-factory_boy
+pytest-factoryboy
 setuptools==41.4.0
 Werkzeug==0.16
 wheel==0.33.6
