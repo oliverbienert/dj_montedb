@@ -1,0 +1,102 @@
+{% extends "home.html" %}
+
+{% load custom_tags %}
+
+{% block navbar %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <div>
+    <h2>Elternbeitragsrechnung</h2>
+    <p>
+        Freie Montessorischule Barnim e.V. (FMB e.V.)<br>
+        c/o Vorstand, zuständig: Adrian Bleisch/ Ulf Hoffmann/ Stephan Graupner<br>
+        Friedrich-Engels-Str. 6<br>
+        16225 Eberswalde<br>
+        Tel. 03334-288548
+    </p>
+    <p>Beitragsbescheid, gültig ab: 18.04.2020</p>
+    <h3>Empfänger</h3>
+    <p>
+        {{ payer.last_name }}, {{ payer.first_name }}<br>
+        {% with payer.address as address %}
+        {{ address.street }} {{ address.house_number }}<br>
+        {{ address.zip_code}} {{ address.city }}
+        {% endwith %}
+    </p>
+    <h3>Beiträge</h3>
+    <p>Gemäß § 17 des Kindertagesstättengesetzes (KitaG Land Brandenburg) vom 27.06.2004  und der von der Mitgliederversammlung zuletzt beschlossenen Beitragsordnung wird Ihr monatlicher Beitrag für die Nutzung der Einrichtungen des Freie Montessorischule Barnim e.V. wie folgt festgesetzt:</p>
+    <table style="border-width:0;">
+        <tbody>
+        {% for child, childCalculation in children.items %}
+            <tr style="font-weight: bold">
+                <td>{{ child }}</td>
+                <td>{{ childCalculation.fee|euro }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h3>Berechnung</h3>
+    <table style="margin-bottom: 0.2cm; width: 17cm; border: black 1px solid; font-size: 10pt;  table-layout: fixed;">
+        <tr>
+            <th class="border" style="width:3cm;">Name</th>
+            <th class="border" style="width:3cm;">Vorname</th>
+            <th class="border" style="width:1.5cm;">Eink.</th>
+            <th class="border" style="width:1.5cm;">Kinder- geld</th>
+            <th class="border" style="width:1.5cm;">Mind. 1</th>
+            <th class="border" style="width:1.5cm;">Mind 2</th>
+            <th class="border" style="width:1.5cm;">Erw. Betr.</th>
+            <th class="border" style="width:1.5cm;">Berücks. Eink.</th>
+            <th class="border" style="width:2cm;">Betrag</th>
+        </tr>
+        {% for child, childCalculation in children.items %}
+        <tr>
+            <td class="border">{{ child.last_name }}</td>
+            <td class="border">{{ child.first_name }}</td>
+            <td class="border" style="text-align:right;">{{ childCalculation.income|euro }}</td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;">{{ childCalculation.reduction1|percentage }}</td>
+            <td class="border" style="text-align:right;">{{ childCalculation.reduction2|percentage }}</td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;">{{ childCalculation.incomeApplied|euro }}</td>
+            <td class="border" style="text-align:right;">{{ childCalculation.fee|euro }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>Einkommen</h3>
+    <table style="margin-bottom: 0.2cm; width: 17cm; border: black 1px solid; font-size: 10pt;  table-layout: fixed;">
+        <tr>
+            <th class="border" style="width:3cm;">Name</th>
+            <th class="border" style="width:3cm;">Vorname</th>
+            <th class="border" style="width:1.5cm;">Nicht selbst.</th>
+            <th class="border" style="width:1.5cm;">Selbst.</th>
+            <th class="border" style="width:1.5cm;">Arbeits- amt</th>
+            <th class="border" style="width:1.5cm;">Unterhalt</th>
+            <th class="border" style="width:1.5cm;">Sonst.</th>
+            <th class="border" style="width:1.5cm;">Abzügl.</th>
+            <th class="border" style="width:2cm;">Gesamt</th>
+        </tr>
+        {% for adult, adultCalculation in adults.items %}
+        <tr>
+            <td class="border">{{ adult.last_name }}</td>
+            <td class="border">{{ adult.first_name }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.salary|euro }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.income|euro }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.unemployment|euro }}</td>
+            <td class="border" style="text-align:right;"></td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.other_payments|euro }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.deduction|euro }}</td>
+            <td class="border" style="text-align:right;">{{ adultCalculation.total_income|euro }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>Bemerkungen</h3>
+    <p></p>
+    <p>Die Elternbeiträge werden zum 15. des Monats eingezogen.</p>
+    <p>Für eventuell erforderlich werdende Mahnungen werden jeweils 5,- € Gebühren erhoben.<br>Veränderungen des Gesamteinkommens von mehr als 5 % müssen dem Vorstand unter Vorlage entsprechender Bescheide zur Kenntnis gegeben werden.</p>
+    <p>Dieser Beitragsbescheid ersetzt alle früheren Bescheide.</p>
+    <p>Eberswalde, den 18.04.2020</p>
+    </div>
+
+{% endblock main %}

@@ -6,6 +6,7 @@ django-constance[database]==2.6.0
 django-crispy-forms==1.7.2
 django-debug-toolbar==2.2
 django-environ==0.4.5
+django-extensions
 django-grappelli==2.13.4
 django-phonenumber-field
 django-tables2
@@ -14,7 +15,7 @@ pipdeptree==0.13.2
 phonenumbers
 psycopg2
 pytest-django
-factory_boy
+pytest-factoryboy
 setuptools==41.4.0
 testfixtures
 Werkzeug==0.16

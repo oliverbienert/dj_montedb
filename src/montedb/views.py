@@ -1,6 +1,8 @@
+from django.views.generic import TemplateView
 from django_tables2 import SingleTableView
 from .models import Adult, Child
 from .tables import AdultTable, ChildTable
+from .fees import get_adults, Fee
 
 
 class ChildrenView(SingleTableView):
@@ -24,4 +26,18 @@ class AdultsView(SingleTableView):
         # Call the base implementation first to get a context
         context = super(AdultsView, self).get_context_data(**kwargs)
         context['adults'] = 'active'
+        return context
+
+
+class ParentFeeView(TemplateView):
+    template_name = "montedb/parent_fee.html"
+
+    def get_context_data(self, **kwargs):
+        adult = Adult.objects.get(pk=kwargs['pk'])
+        context = super(ParentFeeView, self).get_context_data(**kwargs)
+
+        fee = Fee(adult)
+        context['payer'] = fee.payer
+        context['adults'] = fee.adult_calculations
+        context['children'] = fee.children_calculations
         return context
