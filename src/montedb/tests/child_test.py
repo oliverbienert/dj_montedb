@@ -18,5 +18,5 @@ class TestChild:
         )
 
         assert str(child) == "first name last name"
-        with Replace('.factories.ChildFactory.date', test_date())
-        assert child.age ==
+        with Replace('.factories.ChildFactory.date', test_date(2020, 1, 1)):
+            assert child.age == 10
