@@ -1,5 +1,5 @@
 import factory
-from ..models import Address, Person
+from ..models import Address, Child, Person
 
 
 class AddressFactory(factory.DjangoModelFactory):
@@ -10,3 +10,8 @@ class AddressFactory(factory.DjangoModelFactory):
 class PersonFactory(factory.DjangoModelFactory):
     class Meta:
         model = Person
+
+
+class ChildFactory(factory.DjangoModelFactory):
+    class Meta:
+        model = Child
