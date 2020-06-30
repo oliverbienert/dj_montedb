@@ -1,4 +1,3 @@
-import datetime
 import pytest
 
 from config.tests.factories import PersonFactory
@@ -7,6 +6,6 @@ from config.tests.factories import PersonFactory
 class TestPerson:
     @pytest.mark.django_db
     def test_person_model(self):
-        person = PersonFactory(last_name="last name", first_name="first name", birth_date=datetime.date(2020, 1, 1))
+        person = PersonFactory()
 
         assert str(person) == "first name last name"
