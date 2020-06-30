@@ -17,6 +17,5 @@ psycopg2
 pytest-django
 pytest-factoryboy
 setuptools==41.4.0
-testfixtures
 Werkzeug==0.16
 wheel==0.33.6
