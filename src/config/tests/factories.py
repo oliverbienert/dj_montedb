@@ -18,8 +18,8 @@ class PersonFactory(factory.DjangoModelFactory):
     class Meta:
         model = Person
 
-    last_name = 'last name'
-    first_name = 'first name'
+    last_name = 'Hands'
+    first_name = 'Idle'
     birth_date = date(2020, 1, 1)
 
 
@@ -28,8 +28,8 @@ class ChildFactory(factory.DjangoModelFactory):
         model = Child
         django_get_or_create = ('last_name',)
 
-    last_name = 'last name'
-    first_name = 'first name'
+    last_name = 'Kilmister'
+    first_name = 'Lemmy'
     birth_date = date(2010, 1, 1)
     birth_place = 'place'
     care_time = 2
@@ -40,11 +40,11 @@ class AdultFactory(factory.DjangoModelFactory):
     class Meta:
         model = Adult
 
-    last_name = 'last name'
-    first_name = 'first name'
+    last_name = 'Raven'
+    first_name = 'Count'
     birth_date = date(2010, 1, 1)
     iban = "DE123"
-    partner = factory.SubFactory('config.tests.factories.AdultFactory')
+    # partner = factory.SubFactory('config.tests.factories.AdultFactory')
     address = factory.SubFactory(AddressFactory)
     club_member = True
     staff = False
@@ -66,5 +66,5 @@ class AdultChildFactory(factory.DjangoModelFactory):
 class AdultWithChildFactory(AdultFactory):
     kinship = factory.RelatedFactory(
         AdultChildFactory,
-        factory_related_name='last name'
+        factory_related_name='adult',
     )

@@ -8,4 +8,4 @@ class TestPerson:
     def test_person_model(self):
         person = PersonFactory()
 
-        assert str(person) == "first name last name"
+        assert str(person) == "Idle Hands"
