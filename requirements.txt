@@ -20,7 +20,7 @@ django-grappelli==2.13.4
 django-phonenumber-field==4.0.0
 django-picklefield==3.0.1  # via django-constance
 django-tables2==2.3.1
-django==2.2.10
+django==2.2.11
 factory-boy==2.12.0       # via pytest-factoryboy
 faker==4.1.1              # via factory-boy
 inflection==0.5.0         # via pytest-factoryboy
@@ -47,5 +47,5 @@ werkzeug==0.16
 wheel==0.33.6
 
 # The following packages are considered to be unsafe in a requirements file:
-# pip==20.1.1               # via pipdeptree
+# pip==20.2.2               # via pipdeptree
 # setuptools==41.4.0
