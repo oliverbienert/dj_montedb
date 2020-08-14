@@ -39,12 +39,12 @@ class ChildFactory(factory.DjangoModelFactory):
 class AdultFactory(factory.DjangoModelFactory):
     class Meta:
         model = Adult
+        django_get_or_create = ('last_name',)
 
     last_name = 'Raven'
     first_name = 'Count'
     birth_date = date(2010, 1, 1)
     iban = "DE123"
-    # partner = factory.SubFactory('config.tests.factories.AdultFactory')
     address = factory.SubFactory(AddressFactory)
     club_member = True
     staff = False
@@ -54,6 +54,7 @@ class AdultFactory(factory.DjangoModelFactory):
 class AdultChildFactory(factory.DjangoModelFactory):
     class Meta:
         model = AdultChild
+        django_get_or_create = ('kinship',)
 
     adult = factory.SubFactory(AdultFactory)
     child = factory.SubFactory(ChildFactory)
