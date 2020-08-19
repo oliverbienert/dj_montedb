@@ -26,7 +26,6 @@ class PersonFactory(factory.DjangoModelFactory):
 class ChildFactory(factory.DjangoModelFactory):
     class Meta:
         model = Child
-        django_get_or_create = ('last_name',)
 
     last_name = 'Kilmister'
     first_name = 'Lemmy'
@@ -39,7 +38,6 @@ class ChildFactory(factory.DjangoModelFactory):
 class AdultFactory(factory.DjangoModelFactory):
     class Meta:
         model = Adult
-        django_get_or_create = ('last_name',)
 
     last_name = 'Raven'
     first_name = 'Count'
@@ -54,7 +52,6 @@ class AdultFactory(factory.DjangoModelFactory):
 class AdultChildFactory(factory.DjangoModelFactory):
     class Meta:
         model = AdultChild
-        django_get_or_create = ('kinship',)
 
     adult = factory.SubFactory(AdultFactory)
     child = factory.SubFactory(ChildFactory)
@@ -65,7 +62,7 @@ class AdultChildFactory(factory.DjangoModelFactory):
 
 
 class AdultWithChildFactory(AdultFactory):
-    kinship = factory.RelatedFactory(
+    adult_child = factory.RelatedFactory(
         AdultChildFactory,
         factory_related_name='adult',
     )
