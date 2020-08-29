@@ -1,7 +1,7 @@
 from datetime import date
 
 import factory
-from montedb.models import Address, Person, Child, Adult, AdultChild, Income, PhoneNumber, EmailAddress, Ruling
+from montedb.models import Address, Person, Child, Adult, AdultChild, Income, PhoneNumber, EmailAddress, Ruling, ParentalContribution
 
 
 class AddressFactory(factory.DjangoModelFactory):
@@ -102,3 +102,13 @@ class RulingFactory(factory.DjangoModelFactory):
     valid_from = date(2020, 1, 1)
     valid_to = date(2021, 1, 1)
     child = factory.SubFactory(ChildFactory)
+
+
+class ParentalContributionFactory(factory.DjangoModelFactory):
+    class Meta:
+        model = ParentalContribution
+
+    type = ParentalContribution.SCHOOL_FEE
+    income = 1234
+    children = 1
+    contribution = 56
