@@ -1,7 +1,7 @@
 from datetime import date
 
 import factory
-from montedb.models import Address, Person, Child, Adult, AdultChild, Income, PhoneNumber, EmailAddress
+from montedb.models import Address, Person, Child, Adult, AdultChild, Income, PhoneNumber, EmailAddress, Ruling
 
 
 class AddressFactory(factory.DjangoModelFactory):
@@ -92,3 +92,13 @@ class EmailAddressFactory(factory.DjangoModelFactory):
     email_address = "a@bc.de"
     type = EmailAddress.WORK
     adult = factory.SubFactory(AdultFactory)
+
+
+class RulingFactory(factory.DjangoModelFactory):
+    class Meta:
+        model = Ruling
+
+    type = Ruling.EXTENDED_DAY_TIME
+    valid_from = date(2020, 1, 1)
+    valid_to = date(2021, 1, 1)
+    child = factory.SubFactory(ChildFactory)
