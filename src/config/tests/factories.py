@@ -1,7 +1,7 @@
 from datetime import date
 
 import factory
-from montedb.models import Address, Person, Child, Adult, AdultChild
+from montedb.models import Address, Person, Child, Adult, AdultChild, Income
 
 
 class AddressFactory(factory.DjangoModelFactory):
@@ -66,3 +66,12 @@ class AdultWithChildFactory(AdultFactory):
         AdultChildFactory,
         factory_related_name='adult',
     )
+
+
+class IncomeFactory(factory.DjangoModelFactory):
+    class Meta:
+        model = Income
+
+    amount = 1234
+    type = Income.SALARY
+    adult = factory.SubFactory(AdultFactory)
