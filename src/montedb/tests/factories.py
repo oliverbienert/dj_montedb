@@ -47,6 +47,7 @@ class AdultFactory(factory.DjangoModelFactory):
     club_member = True
     staff = False
     household_size = 5
+    partner = None
 
 
 class AdultChildFactory(factory.DjangoModelFactory):
