@@ -1,4 +1,7 @@
-from .models import Income, ParentalContribution
+import pandas as pd
+
+from .models import Income
+from django.conf import settings
 
 
 class ChildCalculation:
@@ -32,22 +35,6 @@ class AdultCalculation:
             self.deduction = -income_amount
         else:
             print("WARNING: Income type {} is not known for AdultCalculation!".format(income_type))
-
-
-def get_adults(adult):
-    adults = set()
-    for child in adult.children.all():
-        # Only adults that have been marked as liable to pay for that child
-        for related_adult in child.adults.filter(adultchild__liable=True):
-            adults.add(related_adult)
-    return adults
-
-
-def get_children(adult):
-    children = set()
-    for child in adult.children.filter(adultchild__liable=True):
-        children.add(child)
-    return children
 
 
 class Fee:
@@ -87,6 +74,7 @@ class Fee:
             adult_calculation.total_income = adult_total_income
             self.adult_calculations[adult] = adult_calculation
 
+    # TODO: Only childs getting child allowance are to be taken into account
     def calc_reduction2(self):
         total = len(self.adults) + len(self.children)
         household_size = 0
@@ -101,26 +89,38 @@ class Fee:
             self.reduction2 = add_household_members * 0.05
 
     def calc_fee(self):
-        reduction1 = 0
+        income = self.total_income
         for child in sorted(self.children, key=lambda x: x.birth_date):
             child_calculation = ChildCalculation()
             child_calculation.income = self.total_income
-            child_calculation.reduction2 = self.reduction2
-
-            income = self.total_income
-            # 20 % reduction for each further child
-            income *= 1 - reduction1
-            child_calculation.reduction1 = reduction1
-            reduction1 += 0.2
-            # Apply reduction2 (5% reduction per additional household member not in school)
-            income *= 1 - self.reduction2
-
-            contribution = ParentalContribution.objects.order_by('-income').filter(
-                income__lte=income,
-                type=ParentalContribution.SCHOOL_FEE,
-                children=len(self.children))[0]
-
+            fee = get_fee(income, child.kita, child.care_time)
+            fee *= 1 - self.reduction2
             child_calculation.incomeApplied = income
-            child_calculation.fee = contribution.contribution
 
             self.children_calculations[child] = child_calculation
+
+
+def get_adults(adult):
+    adults = set()
+    for child in adult.children.all():
+        # Only adults that have been marked as liable to pay for that child
+        for related_adult in child.adults.filter(adultchild__liable=True):
+            adults.add(related_adult)
+    return adults
+
+
+def get_children(adult):
+    children = set()
+    for child in adult.children.filter(adultchild__liable=True):
+        children.add(child)
+    return children
+
+
+def get_fee(income, is_kita, care_time):
+    if not is_kita:
+        filename = settings['SCHOOL_FEE']
+    elif care_time <= 6:
+        filename = settings['KIGA_LE_30H_FEE']
+    else:
+        filename = settings['KIGA_GT_30H_FEE']
+    df = pd.read_csv(filename)

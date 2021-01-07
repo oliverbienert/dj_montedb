@@ -12,5 +12,6 @@ register(factories.PhoneNumberFactory)
 register(factories.RulingFactory)
 register(factories.ParentalContributionFactory)
 register(factories.AdultChildFactory)
-register(factories.AdultWithChildFactory, partner=LazyFixture("second_adult"))
-register(factories.AdultWithChildFactory, 'second_adult', last_name="Amarth", first_name="Amon")
+register(factories.AdultWithChildFactory, partner=LazyFixture('second_adult'))
+register(factories.AdultWithChildFactory, 'second_adult', last_name='Amarth', first_name='Amon')
+

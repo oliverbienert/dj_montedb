@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 from django_tables2 import SingleTableView
 from .models import Adult, Child
 from .tables import AdultTable, ChildTable
-from .fees import get_adults, Fee
+from .fees import Fee
 
 
 class ChildrenView(SingleTableView):

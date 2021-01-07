@@ -8,6 +8,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from datetime import date, datetime, timezone
+from os.path import join
 
 from django.urls import reverse_lazy
 from pathlib import Path
@@ -172,4 +173,8 @@ CONSTANCE_CONFIG = {
     'SCHOOL_ENROLMENT_DUE_DAY': (date(datetime.now(tz=timezone.utc).date().year,9,30), _('Due day for first day at school')),
 }
 
-
+FILE_NAMES = {
+    'SCHOOL_FEE': join(BASE_DIR, 'config/parental_contribution', 'school_fee.csv'),
+    'KIGA_GT_30H_FEE': join(BASE_DIR, 'config/parental_contribution', 'kindergarten_gt_30h_fee.csv'),
+    'KIGA_LE_30H_FEE': join(BASE_DIR, 'config/parental_contribution', 'kindergarten_le_30h_fee.csv'),
+}

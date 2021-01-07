@@ -10,6 +10,7 @@ django-extensions
 django-grappelli==2.13.4
 django-phonenumber-field
 django-tables2
+pandas
 pip-tools==4.2.0
 pipdeptree==0.13.2
 phonenumbers
