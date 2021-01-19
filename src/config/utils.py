@@ -49,3 +49,13 @@ def fill_parental_contribution_table():
                     if not created:
                         contribution_entry.contribution = contribution
                         contribution_entry.save()
+
+
+def find_neighbours(value, df, col_name):
+    exact_match = df[df[col_name] == value]
+    if not exact_match.empty:
+        return exact_match.index
+    else:
+        lower_neighbour_ind = df[df[col_name] < value][col_name].idxmax()
+        upper_neighbour_ind = df[df[col_name] > value][col_name].idxmin()
+        return [lower_neighbour_ind, upper_neighbour_ind] 
