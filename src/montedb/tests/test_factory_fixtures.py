@@ -15,7 +15,8 @@ class TestFactoryFixtures:
         assert str(person) == "Idle Hands"
 
     def test_child(self, child_factory):
-        child = child_factory(birth_date=date(2012, 1, 1))
+        birth_year = date.today().year - 8
+        child = child_factory(birth_date=date(birth_year, 1, 1))
         assert str(child) == "Lemmy Kilmister"
         assert child.age() == 8
 
