@@ -21,9 +21,9 @@ class TestAdult:
         assert str(second_adult) == "Amon Amarth"
         assert str(adult.partner.partner == adult)
 
-    # noinspection PyTestParametrized
-    @pytest.mark.parametrize("income__adult", [LazyFixture(lambda adult: adult)])
-    def test_school_fee(self, adult, income):
-        fee = Fee(adult)
-        assert income.adult == adult
-        assert fee.children_calculations[0].fee == 250
+    # # noinspection PyTestParametrized
+    # @pytest.mark.parametrize("income__adult", [LazyFixture(lambda adult: adult)])
+    # def test_school_fee(self, adult, income):
+    #     fee = Fee(adult)
+    #     assert income.adult == adult
+    #     assert fee.children_calculations[0].fee == 250
